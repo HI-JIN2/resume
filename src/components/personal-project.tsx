@@ -25,17 +25,38 @@ export const PersonalProject = () => {
               </>
             }
             right={
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-8">
                 {project.features.map((feature, featureIndex) => (
                   <div key={`${project.title}-${featureIndex}`}>
-                    <h2 className="text-lg font-semibold mb-1">
+                    <h2 className="text-lg font-semibold mb-3">
                       {feature.title}
                     </h2>
-                    <List
-                      items={feature.descriptions.map((description, index) => (
-                        <p key={index}>{parseBold(description)}</p>
-                      ))}
-                    />
+                    {feature.achievements.length > 0 && (
+                      <div className="mb-4">
+                        <h3 className="text-base font-semibold mb-2">성과</h3>
+                        <List
+                          items={feature.achievements.map(
+                            (description, index) => (
+                              <p key={index}>{parseBold(description)}</p>
+                            )
+                          )}
+                        />
+                      </div>
+                    )}
+                    {feature.contributions.length > 0 && (
+                      <div>
+                        <h3 className="text-base font-semibold mb-2">
+                          주요 기여
+                        </h3>
+                        <List
+                          items={feature.contributions.map(
+                            (description, index) => (
+                              <p key={index}>{parseBold(description)}</p>
+                            )
+                          )}
+                        />
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

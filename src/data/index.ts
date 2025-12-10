@@ -149,7 +149,8 @@ export const EXPERIENCE: WorkExperience[] = [
 
 type PersonalProjectFeature = {
   title: string;
-  descriptions: string[];
+  achievements: string[];
+  contributions: string[];
 };
 
 type PersonalProject = {
@@ -170,11 +171,14 @@ export const PERSONAL_PROJECT: PersonalProject[] = [
     to: "",
     features: [
       {
-        title: "누적 가입자 3,500+명이 사용하는 학식 리뷰 서비스 기획 · 개발 · 운영",
-        descriptions: [
+        title: "누적 가입자 4,000+명이 사용하는 학식 리뷰 서비스 기획 · 개발 · 운영",
+        achievements: [
           "Crashlytics 로그 분석으로 15건 이상의 주요 크래시를 해결해 비정상 종료율 0% 유지",
           "40회 이상 업데이트와 플레이스토어·에브리타임·인스타그램 피드백 채널로 사용자 요구를 빠르게 반영",
           "Remote Config를 도입해 학기별 식당 운영 시간 변경을 코드 수정 없이 즉시 반영",
+          "교내 2023 소프트웨어 공모전 금상 수상"
+        ],
+        contributions: [
           "레거시 XML 구조를 MVVM + Clean Architecture로 재설계하고 sealed UiState로 일관된 로딩 경험 제공",
           "SharedFlow 기반 UiEvent 관리로 Toast 중첩 문제를 제거하고 suspend 기반 이미지 업로드로 처리 안정성 확보",
           "Compressor 기반 이미지 압축으로 용량을 84~93% 절감해 S3 비용을 최적화",
@@ -190,7 +194,11 @@ export const PERSONAL_PROJECT: PersonalProject[] = [
     features: [
       {
         title: "북한이탈주민 정착 지원 서비스 안드로이드 앱",
-        descriptions: [
+        achievements: [
+          "15회 숭실 캡스톤디자인 경진대회 장려상 수상",
+          "전공종합설계 교과목 A학점 달성"
+        ],
+        contributions: [
           "OpenAI Realtime API WebSocket을 도입해 기존 REST + TTS 대비 응답 지연을 11초에서 3초로 단축",
           "지도 중심 좌표 이동에 0.1km 임계값을 적용해 API 호출량을 78% 감소",
           "줌 레벨로 요청 범위를 조정해 전달받는 데이터를 최적화하고 서버 부하를 완화",
@@ -205,10 +213,12 @@ export const PERSONAL_PROJECT: PersonalProject[] = [
     features: [
       {
         title: "해외 봉사 현장에서 500권 이상의 도서를 빠르게 등록하기 위한 안드로이드 기반 시스템",
-        descriptions: [
-          "ISBN 바코드 스캔 → Google Books API 조회 → Google Spreadsheet 저장을 자동화해 1권당 1분 걸리던 작업을 10초로 단축",
-          "비개발자 봉사단을 위해 Google Apps Script로 Spreadsheet를 데이터베이스처럼 활용하도록 설계",
+        achievements: [
           "4시간 만에 MVP를 완성해 수작업 대비 6배 이상의 등록 효율을 달성",
+        ],
+        contributions: [
+          "ISBN 바코드 스캔 → Google Books API 조회 → Google Spreadsheet 저장을 자동화해 1권당 1분 걸리던 작업을 10초로 단축",
+          "비개발자 봉사단원을 위해 Google Apps Script로 Spreadsheet를 데이터베이스처럼 활용하도록 설계",
         ],
       },
     ],
@@ -236,8 +246,8 @@ export const OPEN_SOURCE_PROJECT: OpenSourceProject[] = [
       {
         title: "주요 대회 수상",
         descriptions: [
-          "K-PaaS 활용 디지털 사회혁신 서비스 개발 공모전 금상 (2위) | 한국지능정보사회진흥원 | 2023.12",
-          "AI활용 온라인 개발대회 싱커톤 시즌3 최우수상 (2위) | 주식회사 엔터플 | 2023.11",
+          "K-PaaS 활용 디지털 사회혁신 서비스 개발 공모전 금상 (2위) | 한국지능정보사회진흥원 (2023.12)",
+          "AI활용 온라인 개발대회 싱커톤 시즌3 최우수상 (2위) | 주식회사 엔터플 (2023.11)",
         ],
       },
     ],
@@ -247,10 +257,17 @@ export const OPEN_SOURCE_PROJECT: OpenSourceProject[] = [
     name: "Community",
     features: [
       {
-        title: "커뮤니티 활동",
+        title: "Google Developer Student Clubs (2023.10 - 2025.08)",
         descriptions: [
-          "Google Developer Student Clubs (2023.10 - 2025.08) → 해외 봉사 개발 경험, 교내 서비스 운영 경험 공유 세션 진행, CS 인터뷰/회고/테크 블로그 스터디를 기획해 '스터디를 가장 많이 운영한 멤버' 선정",
-          "YOURSSU Android Developer (2023.10 - 2024.12) → 숭실대 커뮤니티 '숨쉴때'와 디자인 시스템 'Handy' 개발에 참여하고 동아리 내 Android 문화를 정착",
+          "해외 봉사 개발 경험, 교내 서비스 운영 경험 공유 세션 진행,",
+          "CS 인터뷰/회고/테크 블로그 스터디 등을 기획/운영해 '스터디를 가장 많이 운영한 멤버' 선정",
+        ],
+      },
+      {
+        title: "YOURSSU Android Developer (2023.10 - 2024.12)",
+        descriptions: [
+          "숭실대 커뮤니티 '숨쉴때'와 디자인 시스템 'Handy' 개발",
+          "주 1회 안드로이드 스터디 동아리 참여",
         ],
       },
     ],

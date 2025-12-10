@@ -68,12 +68,12 @@ export const WorkExperience = () => {
                             <SpecSheet items={feature.spec} />
                           </Description>
 
-                          <Description title="핵심 기여">
+                          <Description title="성과">
                             <List
                               items={renderTaskItems(feature.achievements)}
                             />
                           </Description>
-                          <Description title="주요 성과">
+                          <Description title="주요 기여">
                             <List
                               items={renderTaskItems(feature.contributions)}
                             />
