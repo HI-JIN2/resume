@@ -11,10 +11,10 @@ export const Profile = () => {
         {items.map(({ label, value, href }, index) => {
           const resolvedHref =
             href ||
-            (value.includes("@")
-              ? `mailto:${value}`
-              : value.startsWith("http")
+            (value.startsWith("http")
               ? value
+              : value.includes("@")
+              ? `mailto:${value}`
               : undefined);
           const isLast = index === items.length - 1;
 

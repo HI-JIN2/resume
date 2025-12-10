@@ -21,18 +21,20 @@ export const OpenSourceProject = () => {
               </>
             }
             right={
-              <>
-                <h2 className="text-lg font-semibold mb-1">
-                  {project.feature.title}
-                </h2>
-                <List
-                  items={project.feature.descriptions.map(
-                    (description, index) => (
-                      <p key={index}>{parseBold(description)}</p>
-                    )
-                  )}
-                />
-              </>
+              <div className="flex flex-col gap-6">
+                {project.features.map((feature, featureIndex) => (
+                  <div key={`${project.title}-${featureIndex}`}>
+                    <h2 className="text-lg font-semibold mb-1">
+                      {feature.title}
+                    </h2>
+                    <List
+                      items={feature.descriptions.map((description, index) => (
+                        <p key={index}>{parseBold(description)}</p>
+                      ))}
+                    />
+                  </div>
+                ))}
+              </div>
             }
           />
         ))}
