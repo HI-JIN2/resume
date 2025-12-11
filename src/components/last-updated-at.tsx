@@ -1,9 +1,11 @@
-import { LAST_UPDATED_AT } from "../data";
+import { useResumeData } from "../context/resume-context";
 
 export const LastUpdatedAt = () => {
+  const { lastUpdatedAt } = useResumeData();
+
   return (
     <div className="italic text-sm text-center mt-[120px]">
-      Last updated: {LAST_UPDATED_AT}
+      Last updated: {lastUpdatedAt}
     </div>
   );
 };

@@ -1,12 +1,13 @@
-import { PROFILE } from "../data";
+import { useResumeData } from "../context/resume-context";
 import { Link } from "./link";
 import { Section } from "./Section";
 
 export const Profile = () => {
-  const items = PROFILE.links || [];
+  const { profile } = useResumeData();
+  const items = profile.links || [];
 
   return (
-    <Section title={PROFILE.name} mb={52}>
+    <Section title={profile.name} mb={52}>
       <div className="flex max-sm:flex-col">
         {items.map(({ label, value, href }, index) => {
           const resolvedHref =

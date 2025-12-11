@@ -1,4 +1,4 @@
-import { OPEN_SOURCE_PROJECT } from "../data";
+import { useResumeData } from "../context/resume-context";
 import { parseBold } from "../utils/parse-bold";
 import { LinkList } from "./link-list";
 import { List } from "./List";
@@ -6,10 +6,12 @@ import { Section } from "./Section";
 import { TwoColumnWrapper } from "./two-column-wrapper";
 
 export const OpenSourceProject = () => {
+  const { openSourceProjects } = useResumeData();
+
   return (
     <Section title="Highlights" mt={87}>
       <div className="flex flex-col gap-[62px]">
-        {OPEN_SOURCE_PROJECT.map((project) => (
+        {openSourceProjects.map((project) => (
           <TwoColumnWrapper
             key={project.title}
             left={

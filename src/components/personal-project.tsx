@@ -1,4 +1,4 @@
-import { PERSONAL_PROJECT } from "../data";
+import { useResumeData } from "../context/resume-context";
 import { parseBold } from "../utils/parse-bold";
 import { LinkList } from "./link-list";
 import { List } from "./List";
@@ -6,10 +6,12 @@ import { Section } from "./Section";
 import { TwoColumnWrapper } from "./two-column-wrapper";
 
 export const PersonalProject = () => {
+  const { personalProjects } = useResumeData();
+
   return (
     <Section title="Personal Project" mt={87}>
       <div className="flex flex-col gap-[62px]">
-        {PERSONAL_PROJECT.map((project) => (
+        {personalProjects.map((project) => (
           <TwoColumnWrapper
             key={project.title}
             left={

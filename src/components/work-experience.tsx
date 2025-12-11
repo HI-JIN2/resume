@@ -4,7 +4,7 @@ import { Section } from "./Section";
 import { SpecSheet } from "./spec-sheet";
 import { TwoColumnWrapper } from "./two-column-wrapper";
 
-import { EXPERIENCE } from "../data";
+import { useResumeData } from "../context/resume-context";
 import { calculateDuration } from "../utils/calculate-duration";
 import { Description } from "./Description";
 import { parseBold } from "../utils/parse-bold";
@@ -16,10 +16,12 @@ const renderTaskItems = (tasks: string[]) => {
 };
 
 export const WorkExperience = () => {
+  const { experience } = useResumeData();
+
   return (
     <Section title="Experience" mt={87}>
       <div className="flex flex-col gap-[62px]">
-        {EXPERIENCE.map(
+        {experience.map(
           ({ corp, from, to, features, position, about = [] }, index) => (
             <TwoColumnWrapper
               key={index}
