@@ -125,7 +125,7 @@ export const GENERAL_RESUME: ResumeContent = {
       ],
     },
   ],
-  personalProjects: [
+  projects: [
     {
       title: "EAT-SSU",
       from: "2022.11",
