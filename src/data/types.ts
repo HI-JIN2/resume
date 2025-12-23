@@ -37,13 +37,13 @@ export type WorkExperienceFeature = {
   spec: string[];
 };
 
-export type PersonalProjectFeature = {
+export type ProjectFeature = {
   title: string;
   achievements: string[];
   contributions: string[];
 };
 
-export type PersonalProject = {
+export type Project = {
   title: string;
   from: string;
   to: string;
@@ -51,7 +51,7 @@ export type PersonalProject = {
     title: string;
     url: string;
   }[];
-  features: PersonalProjectFeature[];
+  features: ProjectFeature[];
 };
 
 export type Presentation = {
@@ -81,7 +81,7 @@ export type ResumeContent = {
   profile: Profile;
   about: AboutItem[];
   experience: WorkExperience[];
-  personalProjects: PersonalProject[];
+  projects: Project[];
   presentations: Presentation[];
   openSourceProjects: OpenSourceProject[];
   lastUpdatedAt: string;

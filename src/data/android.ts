@@ -143,7 +143,7 @@ export const ANDROID_RESUME: ResumeContent = {
       ],
     },
   ],
-  personalProjects: [
+  projects: [
     {
       title: "EAT-SSU",
       from: "2022.11",
@@ -206,28 +206,28 @@ export const ANDROID_RESUME: ResumeContent = {
   presentations: [
     {
       title: "스타트업에서 살아남기",
-      event: "GDSC Soongsil 슈몰세미나 발표",
+      event: "GDG on Campus 슈몰세미나",
       descriptions: [
         "학점연계 ICT 인턴십 제도 및 스타트업 경험 공유",
       ],
     },
      {
       title: "해외봉사가서 개발하기",
-      event: "GDSC Soongsil 슈몰세미나 발표",
+      event: "GDG on Campus Soongsil 슈몰세미나",
       descriptions: [
         "제한된 환경에서 문제를 빠르게 해결한 안드로이드 개발 사례 공유",
       ],
     },
     {
       title: "학교에서 서비스 운영하기",
-      event: "GDSC Soongsil 슈몰세미나 발표",
+      event: "GDSC Soongsil 슈몰세미나",
       descriptions: [
         "학내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유",
       ],
     },
      {
       title: "안드로이드에서 HTTP 통신하기",
-      event: "UMC 4기 컨퍼런스 발표",
+      event: "UMC 4기 컨퍼런스",
       descriptions: [
         "초보 안드로이드 개발자를 대상으로 안드로이드와 스프링부트 개발 경험을 바탕으로 서버통신 공유",
       ],
@@ -254,15 +254,15 @@ export const ANDROID_RESUME: ResumeContent = {
         {
           title: "Google Developer Student Clubs (2023.10 - 2025.08)",
           descriptions: [
-            "해외 봉사 개발 경험, 교내 서비스 운영 경험을 공유하고 기술 세션을 진행",
-            "CS 인터뷰/회고/테크 블로그 스터디 기획으로 ‘스터디를 가장 많이 운영한 멤버’ 선정",
+            "세미나를 통해 해외 봉사 개발 경험, 교내 서비스 운영 경험을 공유",
+            "‘스터디를 가장 많이 운영한 멤버’ 선정 - CS 인터뷰/회고/테크 블로그 스터디 등 운영",
           ],
         },
         {
           title: "YOURSSU Android Developer (2023.10 - 2024.12)",
           descriptions: [
             "숭실대 커뮤니티 '숨쉴때'와 디자인 시스템 'Handy' 개발",
-            "주 1회 안드로이드 스터디 동아리 참여",
+            "주 1회 안드로이드 스터디 참여",
           ],
         },
       ],

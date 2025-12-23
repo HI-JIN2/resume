@@ -3,7 +3,7 @@ import { LastUpdatedAt } from "./components/last-updated-at";
 import { Layout } from "./components/Layout";
 import { OpenSourceProject } from "./components/open-source-project";
 import { Presentation } from "./components/presentation";
-import { PersonalProject } from "./components/personal-project";
+import { Project } from "./components/project";
 import { Profile } from "./components/Profile";
 import { WorkExperience } from "./components/work-experience";
 import { ResumeProvider } from "./context/resume-context";
@@ -15,7 +15,7 @@ function App() {
         <Profile />
         <AboutMe />
         <WorkExperience />
-        <PersonalProject />
+        <Project />
         <Presentation />
         <OpenSourceProject />
         <LastUpdatedAt />

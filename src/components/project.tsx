@@ -5,13 +5,13 @@ import { List } from "./List";
 import { Section } from "./Section";
 import { TwoColumnWrapper } from "./two-column-wrapper";
 
-export const PersonalProject = () => {
-  const { personalProjects } = useResumeData();
+export const Project = () => {
+  const { projects } = useResumeData();
 
   return (
-    <Section title="Personal Project" mt={87}>
+    <Section title="Project" mt={87}>
       <div className="flex flex-col gap-[62px]">
-        {personalProjects.map((project) => (
+        {projects.map((project) => (
           <TwoColumnWrapper
             key={project.title}
             left={
