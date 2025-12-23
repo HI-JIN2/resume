@@ -53,6 +53,14 @@ type PersonalProject = {
   features: PersonalProjectFeature[];
 };
 
+type Presentation = {
+  title: string;
+  event: string;
+  from?: string;
+  to?: string;
+  descriptions: string[];
+};
+
 type OpenSourceProject = {
   title: string;
   name: string;
@@ -73,6 +81,7 @@ export type ResumeContent = {
   about: AboutItem[];
   experience: WorkExperience[];
   personalProjects: PersonalProject[];
+  presentations: Presentation[];
   openSourceProjects: OpenSourceProject[];
   lastUpdatedAt: string;
 };
@@ -278,6 +287,18 @@ const ANDROID_RESUME: ResumeContent = {
           ],
         },
       ],
+    },
+  ],
+  presentations: [
+    {
+      title: "해외봉사가서 개발하기",
+      event: "GDSC Soongsil 슈몰세미나 발표",
+      descriptions: ["제한된 환경에서 문제를 빠르게 해결한 안드로이드 개발 사례 공유"],
+    },
+    {
+      title: "학교에서 서비스 운영하기",
+      event: "GDSC Soongsil 슈몰세미나 발표",
+      descriptions: ["학내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유"],
     },
   ],
   openSourceProjects: [
@@ -529,6 +550,18 @@ const GENERAL_RESUME: ResumeContent = {
           ],
         },
       ],
+    },
+  ],
+  presentations: [
+    {
+      title: "해외봉사가서 개발하기",
+      event: "GDSC Soongsil 슈몰세미나 발표",
+      descriptions: ["제한된 환경에서 문제를 빠르게 해결한 안드로이드 개발 사례 공유"],
+    },
+    {
+      title: "학교에서 서비스 운영하기",
+      event: "GDSC Soongsil 슈몰세미나 발표",
+      descriptions: ["학내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유"],
     },
   ],
   openSourceProjects: [
