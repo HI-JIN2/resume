@@ -205,6 +205,13 @@ export const ANDROID_RESUME: ResumeContent = {
   ],
   presentations: [
     {
+      title: "스타트업에서 살아남기",
+      event: "GDSC Soongsil 슈몰세미나 발표",
+      descriptions: [
+        "학점연계 ICT 인턴십 제도 및 스타트업 경험 공유",
+      ],
+    },
+     {
       title: "해외봉사가서 개발하기",
       event: "GDSC Soongsil 슈몰세미나 발표",
       descriptions: [

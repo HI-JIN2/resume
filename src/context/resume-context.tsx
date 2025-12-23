@@ -19,34 +19,28 @@ type ResumeContextValue = {
 };
 
 const ResumeContext = createContext<ResumeContextValue | null>(null);
-const QUERY_KEY = "resume";
 
 const resolveInitialType = (): ResumeType => {
   if (typeof window === "undefined") {
     return DEFAULT_RESUME_TYPE;
   }
 
-  const params = new URLSearchParams(window.location.search);
-  const value = params.get(QUERY_KEY);
-
-  if (value === "android" || value === "general") {
-    return value;
+  const [, firstSegment] = window.location.pathname.split("/");
+  if (firstSegment === "general") {
+    return "general";
   }
-
-  return DEFAULT_RESUME_TYPE;
+  return "android";
 };
 
-const syncQueryParam = (type: ResumeType) => {
+const syncPath = (type: ResumeType) => {
   if (typeof window === "undefined") {
     return;
   }
 
-  const params = new URLSearchParams(window.location.search);
-  params.set(QUERY_KEY, type);
-  const query = params.toString();
-  const suffix = query.length ? `?${query}` : "";
-
-  window.history.replaceState({}, "", `${window.location.pathname}${suffix}`);
+  const targetPath = type === "general" ? "/general" : "/android";
+  if (window.location.pathname !== targetPath) {
+    window.history.replaceState({}, "", targetPath);
+  }
 };
 
 export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
@@ -54,7 +48,7 @@ export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
   const data = useMemo(() => getResumeContent(type), [type]);
 
   useEffect(() => {
-    syncQueryParam(type);
+    syncPath(type);
   }, [type]);
 
   return (
