@@ -298,7 +298,7 @@ const ANDROID_RESUME: ResumeContent = {
     {
       title: "학교에서 서비스 운영하기",
       event: "GDSC Soongsil 슈몰세미나 발표",
-      descriptions: ["학내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유"],
+      descriptions: ["교내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유"],
     },
   ],
   openSourceProjects: [
@@ -311,6 +311,9 @@ const ANDROID_RESUME: ResumeContent = {
           descriptions: [
             "K-PaaS 활용 디지털 사회혁신 서비스 개발 공모전 금상 (2위) | 한국지능정보사회진흥원 (2023.12)",
             "AI활용 온라인 개발대회 싱커톤 시즌3 최우수상 (2위) | 주식회사 엔터플 (2023.11)",
+            "15회 숭실 캡스톤디자인 경진대회 장려상 (2025.10)",
+            "소프트웨어공모전 은상 (2025.07)",
+            "소프트웨어공모전 금상 (2023.08)",
           ],
         },
       ],
@@ -346,14 +349,6 @@ const ANDROID_RESUME: ResumeContent = {
             "ICT 유통물류 융합전공 이수",
           ],
         },
-        {
-          title: "교내 수상",
-          descriptions: [
-            "15회 숭실 캡스톤디자인 경진대회 장려상 (2025.10)",
-            "소프트웨어공모전 은상 (2025.07)",
-            "소프트웨어공모전 금상 (2023.08)",
-          ],
-        },
       ],
     },
     {
@@ -363,8 +358,8 @@ const ANDROID_RESUME: ResumeContent = {
         {
           title: "자격",
           descriptions: [
-            "정보처리기사 (2024.12)",
             "SQLD (2025.12)",
+            "정보처리기사 (2024.12)",
           ],
         },
       ],
@@ -555,13 +550,13 @@ const GENERAL_RESUME: ResumeContent = {
   presentations: [
     {
       title: "해외봉사가서 개발하기",
-      event: "GDSC Soongsil 슈몰세미나 발표",
+      event: "GDG on Campus Soongsil 슈몰세미나 발표",
       descriptions: ["제한된 환경에서 문제를 빠르게 해결한 안드로이드 개발 사례 공유"],
     },
     {
       title: "학교에서 서비스 운영하기",
       event: "GDSC Soongsil 슈몰세미나 발표",
-      descriptions: ["학내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유"],
+      descriptions: ["교내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유"],
     },
   ],
   openSourceProjects: [
@@ -574,6 +569,9 @@ const GENERAL_RESUME: ResumeContent = {
           descriptions: [
             "K-PaaS 활용 디지털 사회혁신 서비스 개발 공모전 금상 (2위) | 한국지능정보사회진흥원 (2023.12)",
             "AI활용 온라인 개발대회 싱커톤 시즌3 최우수상 (2위) | 주식회사 엔터플 (2023.11)",
+            "15회 숭실 캡스톤디자인 경진대회 장려상 (2025.10)",
+            "소프트웨어 공모전 은상 (2025.07)",
+            "소프트웨어 공모전 금상 (2023.08)",
           ],
         },
       ],
@@ -609,14 +607,6 @@ const GENERAL_RESUME: ResumeContent = {
             "ICT 유통물류 융합전공 이수",
           ],
         },
-        {
-          title: "교내 수상",
-          descriptions: [
-            "15회 숭실 캡스톤디자인 경진대회 장려상 (2025.10)",
-            "소프트웨어공모전 은상 (2025.07)",
-            "소프트웨어공모전 금상 (2023.08)",
-          ],
-        },
       ],
     },
     {
@@ -626,8 +616,8 @@ const GENERAL_RESUME: ResumeContent = {
         {
           title: "자격",
           descriptions: [
-            "정보처리기사 (2024.12)",
             "SQLD (2025.12)",
+            "정보처리기사 (2024.12)",
           ],
         },
       ],

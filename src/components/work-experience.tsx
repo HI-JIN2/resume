@@ -82,7 +82,7 @@ export const WorkExperience = () => {
                           </Description>
                         </div>
                         {featureIndex < features.length - 1 && (
-                          <div className="w-full h-px border-b border-dashed border-black/80 my-8" />
+                          <div className="w-full h-px border-b border-black/80 my-8" />
                         )}
                       </React.Fragment>
                     );
