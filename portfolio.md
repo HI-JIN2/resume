@@ -107,7 +107,13 @@ K-PaaS 활용 디지털 사회혁신 서비스 개발 공모전 금상(2위)
 AI활용 온라인 개발대회 싱커톤 시즌3 최우수상(2위)
 2023.11
 주식회사 엔터플
-
+PRESENTATION
+해외봉사가서 개발하기
+GDSC Soongsil 슈몰세미나 발표
+제한된 환경에서 문제를 빠르게 해결한 안드로이드 개발 사례 공유
+학교에서 서비스 운영하기
+GDSC Soongsil 슈몰세미나 발표
+학내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유
 
 활동
 Google Developer Student Clubs (GDSC Soongsil)
