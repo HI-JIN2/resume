@@ -1,16 +1,14 @@
 import { ResumeType } from "../data";
 import { useResume } from "../context/resume-context";
 
-const OPTIONS: { type: ResumeType; label: string; description: string }[] = [
+const OPTIONS: { type: ResumeType; label: string; }[] = [
   {
     type: "android",
     label: "Android",
-    description: "모바일 · 임베디드 포지션",
   },
   {
     type: "general",
     label: "General",
-    description: "제너럴리스트 · 백오피스 포지션",
   },
 ];
 
@@ -35,7 +33,6 @@ export const ResumeSwitcher = () => {
             }`}
           >
             <span className="text-sm font-semibold">{option.label}</span>
-            <span className="text-xs opacity-80">{option.description}</span>
           </button>
         );
       })}
