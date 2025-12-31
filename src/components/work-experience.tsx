@@ -5,7 +5,7 @@ import { SpecSheet } from "./spec-sheet";
 import { TwoColumnWrapper } from "./two-column-wrapper";
 
 import { useResumeData } from "../context/resume-context";
-import { calculateDuration } from "../utils/calculate-duration";
+import { formatDateRange } from "../utils/calculate-duration";
 import { parseBold } from "../utils/parse-bold";
 
 const renderTaskItems = (tasks: string[]) => {
@@ -40,7 +40,7 @@ export const WorkExperience = () => {
                   <div className="space-y-1">
                     <div className="text-[#191f28] font-medium">{position}</div>
                     <div className="text-sm text-[#8b95a1]">
-                      {from} - {to || "현재"}
+                      {formatDateRange(from, to).dateRange}
                     </div>
                   </div>
                 </>
@@ -54,14 +54,19 @@ export const WorkExperience = () => {
                           {feature.title}
                         </h2>
                         <div className="text-sm text-[#8b95a1] mb-6 space-y-1">
-                          <p>
-                            {feature.from} - {feature.to || "현재"} (
-                            {calculateDuration(feature.from, feature.to)}
-                            {"with" in feature &&
-                              feature.with &&
-                              ` · FE ${feature.with.fe}인, BE ${feature.with.be}인`}
-                            )
-                          </p>
+                          {(() => {
+                            const { dateRange, duration } = formatDateRange(feature.from, feature.to);
+                            return (
+                              <p>
+                                {dateRange} (
+                                {duration}
+                                {"with" in feature &&
+                                  feature.with &&
+                                  ` · FE ${feature.with.fe}인, BE ${feature.with.be}인`}
+                                )
+                              </p>
+                            );
+                          })()}
                           {feature.description && <p className="text-[#4e5968]">{feature.description}</p>}
                         </div>
 
