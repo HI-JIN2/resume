@@ -5,13 +5,13 @@ import { List } from "./List";
 import { Section } from "./Section";
 import { TwoColumnWrapper } from "./two-column-wrapper";
 
-export const Project = () => {
-  const { projects } = useResumeData();
+export const PersonalProject = () => {
+  const { personalProjects } = useResumeData();
 
   return (
-    <Section title="Project" mt={87}>
+    <Section title="Side Project" mt={87}>
       <div className="flex flex-col gap-[62px]">
-        {projects.map((project) => (
+        {personalProjects.map((project) => (
           <TwoColumnWrapper
             key={project.title}
             left={
@@ -38,7 +38,7 @@ export const Project = () => {
                         <h3 className="text-base font-semibold mb-2">성과</h3>
                         <List
                           items={feature.achievements.map(
-                            (description, index) => (
+                            (description: string, index: number) => (
                               <p key={index}>{parseBold(description)}</p>
                             )
                           )}
@@ -52,7 +52,7 @@ export const Project = () => {
                         </h3>
                         <List
                           items={feature.contributions.map(
-                            (description, index) => (
+                            (description: string, index: number) => (
                               <p key={index}>{parseBold(description)}</p>
                             )
                           )}
@@ -69,3 +69,4 @@ export const Project = () => {
     </Section>
   );
 };
+

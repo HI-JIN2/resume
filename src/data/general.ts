@@ -1,8 +1,6 @@
-import type { ResumeContent } from "./index";
+import type { ResumeVariant } from "./index";
 
-const LAST_UPDATED_AT = "2025. 12. 10";
-
-export const GENERAL_RESUME: ResumeContent = {
+export const GENERAL_RESUME: ResumeVariant = {
   profile: {
     name: "문제를 구조적으로 해결하는 프로덕트 개발자, 유진",
     links: [
@@ -180,94 +178,75 @@ export const GENERAL_RESUME: ResumeContent = {
         },
       ],
     },
-  ],
-  presentations: [
     {
-      title: "해외봉사가서 개발하기",
-      event: "GDSC Soongsil 슈몰세미나 발표",
-      descriptions: [
-        "제한된 환경에서 문제를 빠르게 해결한 안드로이드 개발 사례 공유",
+      title: "마니또 파티",
+      from: "2025.12",
+      to: "",
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/HI-JIN2/manitto-backend",
+        },
       ],
-    },
-    {
-      title: "학교에서 서비스 운영하기",
-      event: "GDSC Soongsil 슈몰세미나 발표",
-      descriptions: [
-        "학내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유",
-      ],
-    },
-  ],
-  openSourceProjects: [
-    {
-      title: "Awards",
-      name: "Major Competitions",
       features: [
         {
-          title: "주요 대회 수상",
-          descriptions: [
-            "K-PaaS 활용 디지털 사회혁신 서비스 개발 공모전 금상 (2위) | 한국지능정보사회진흥원 (2023.12)",
-            "AI활용 온라인 개발대회 싱커톤 시즌3 최우수상 (2위) | 주식회사 엔터플 (2023.11)",
+          title: "마니또 배정 이메일 전송 서비스",
+          achievements: [
+            "웹 풀스택 1인 개발 및 운영",
+          ],
+          contributions: [
+            "마니또 배정 알고리즘 구현 및 이메일 자동 전송 시스템 구축",
           ],
         },
       ],
     },
     {
-      title: "Activities",
-      name: "Community",
+      title: "COOING",
+      from: "2023.10",
+      to: "2023.12",
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/COOING-team/COOING-Server",
+        },
+      ],
       features: [
         {
-          title: "Google Developer Student Clubs (2023.10 - 2025.08)",
-          descriptions: [
-            "해외 봉사 개발 경험, 교내 서비스 운영 경험을 공유하고 기술 세션을 진행",
-            "CS 인터뷰/회고/테크 블로그 스터디 기획으로 ‘스터디를 가장 많이 운영한 멤버’ 선정",
+          title: "쿠잉, 아이의 음성으로 쓰는 성장일기",
+          achievements: [
+            "백엔드 개발 및 인프라 구축",
           ],
-        },
-        {
-          title: "YOURSSU Product Developer (2023.10 - 2024.12)",
-          descriptions: [
-            "숭실대 커뮤니티 '숨쉴때'와 디자인 시스템 'Handy' 개발, 프로토타이핑부터 QA까지 리드",
-            "주 1회 기술 스터디로 최신 안드로이드/웹 아키텍처를 공유",
+          contributions: [
+            "음성 데이터 처리 및 저장 시스템 개발",
+            "서버 인프라 설계 및 운영",
           ],
         },
       ],
     },
     {
-      title: "Education",
-      name: "Soongsil University",
-      features: [
+      title: "머니메이트",
+      from: "2023.10",
+      to: "2023.11",
+      links: [
         {
-          title: "학력",
-          descriptions: [
-            "숭실대학교 컴퓨터학부 학사 (2021.03 - 2025.08)",
-            "ICT 유통물류 융합전공 이수",
-          ],
-        },
-        {
-          title: "교내 수상",
-          descriptions: [
-            "15회 숭실 캡스톤디자인 경진대회 장려상 (2025.10)",
-            "소프트웨어공모전 은상 (2025.07)",
-            "소프트웨어공모전 금상 (2023.08)",
-          ],
+          title: "GitHub",
+          url: "https://github.com/MoneyMate-project/MoneyMate",
         },
       ],
-    },
-    {
-      title: "Certificates",
-      name: "Professional",
       features: [
         {
-          title: "자격",
-          descriptions: [
-            "정보처리기사 (2024.12)",
-            "SQLD (2025.12)",
+          title: "금융 API와 AI를 활용한 금융조언 앱",
+          achievements: [
+            "AI활용 온라인 개발대회 싱커톤 시즌3 최우수상(2위) 수상",
+          ],
+          contributions: [
+            "안드로이드 개발, 백엔드, 프롬프팅 담당",
+            "팀장으로 프로젝트 리드",
+            "금융 API 연동 및 AI 기반 금융 조언 기능 구현",
           ],
         },
       ],
     },
   ],
-  lastUpdatedAt: LAST_UPDATED_AT,
 };
-
-
 

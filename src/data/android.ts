@@ -1,10 +1,8 @@
-import type { ResumeContent } from "./index";
+import type { ResumeVariant } from "./index";
 
-const LAST_UPDATED_AT = "2025. 12. 10";
-
-export const ANDROID_RESUME: ResumeContent = {
+export const ANDROID_RESUME: ResumeVariant = {
   profile: {
-    name: "나무보다 숲을 보는 개발자, 유진",
+    name: "나무보다 숲을 바라보는 안드로이드 개발자, 유진",
     links: [
       {
         label: "Email",
@@ -17,10 +15,10 @@ export const ANDROID_RESUME: ResumeContent = {
   },
   about: [
     {
-      title: "하나의 피쳐가 아닌 제품 단위로 서비스를 책임지는 개발자입니다.",
+      title: "서비스를 끝까지 책임지는 개발자입니다.",
       descriptions: [
         "학식 리뷰 앱 EAT-SSU를 2년 7개월간 운영하며 사용자 3,500명 규모 서비스의 품질을 책임졌습니다.",
-        "사용자 CS · 피드백 반영, UI/UX 개선, XML→Compose 전환, 플레이스토어 정책 대응 등 ‘운영–개선–업데이트’ 전체 사이클을 반복하며 성능 및 안정성을 개선했습니다.",
+        "사용자 CS · 피드백 반영, UI/UX 개선, XML→Compose 전환, 플레이스토어 정책 대응 등 '운영–개선–업데이트' 전체 사이클을 반복하며 성능 및 안정성을 개선했습니다.",
         "그 결과, 전년 대비 WAU/MAU가 21.8% → 62.4%로 상승하여 주간 재방문율과 서비스 Stickiness를 크게 개선했습니다.",
       ],
     },
@@ -35,7 +33,7 @@ export const ANDROID_RESUME: ResumeContent = {
       descriptions: [
         "전공 프로젝트로 시작한 EAT-SSU 팀을 3명에서 15명 규모로 확장하는 과정에서, 지원자–팀 커피챗을 운영해 지원자와 팀의 니즈를 사전에 파악하는 절차를 만들었습니다.",
         "EAT-SSU 팀 내 세미나, KPT 회고, 안드로이드 팀 코드리뷰 및 컨벤션 등을 통해 팀 문화를 정착시켰습니다.",
-        "구글 학생 개발자 커뮤니티에서 2년간 활동하며, CS 인터뷰 스터디·회고 모임·테크블로그 모임 등을 운영해 ‘스터디를 가장 많이 운영한 멤버’로 선정되었습니다.",
+        "구글 학생 개발자 커뮤니티에서 2년간 활동하며, CS 인터뷰 스터디·회고 모임·테크블로그 모임 등을 운영해 '스터디를 가장 많이 운영한 멤버'로 선정되었습니다.",
       ],
     },
   ],
@@ -148,6 +146,12 @@ export const ANDROID_RESUME: ResumeContent = {
       title: "EAT-SSU",
       from: "2022.11",
       to: "",
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/EAT-SSU/Android",
+        },
+      ],
       features: [
         {
           title: "누적 가입자 4,000+명이 사용하는 학식 리뷰 서비스 기획 · 개발 · 운영",
@@ -170,9 +174,15 @@ export const ANDROID_RESUME: ResumeContent = {
       title: "새길",
       from: "2025.03",
       to: "2025.07",
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/saegil-project/Saegil-Android",
+        },
+      ],
       features: [
         {
-          title: "북한이탈주민을 위한 정착 지원 서비스 안드로이드 앱",
+          title: "북한이탈주민 정착 지원 서비스 안드로이드 앱",
           achievements: [
             "15회 숭실 캡스톤디자인 경진대회 장려상 수상",
             "전공종합설계 교과목 A학점 달성",
@@ -186,9 +196,15 @@ export const ANDROID_RESUME: ResumeContent = {
       ],
     },
     {
-      title: "ISBN 기반 도서 전산 자동화 시스템",
+      title: "ISBN 바코드 스캔 기반 도서 전산 시스템",
       from: "2024.07",
       to: "2024.07",
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/HI-JIN2/isbn-scanner-mini-library",
+        },
+      ],
       features: [
         {
           title: "해외 봉사 현장에서 500권 이상의 도서를 빠르게 등록하기 위한 안드로이드 기반 시스템",
@@ -203,93 +219,5 @@ export const ANDROID_RESUME: ResumeContent = {
       ],
     },
   ],
-  presentations: [
-    {
-      title: "해외봉사가서 개발하기",
-      event: "GDSC Soongsil 슈몰세미나 발표",
-      descriptions: [
-        "제한된 환경에서 문제를 빠르게 해결한 안드로이드 개발 사례 공유",
-      ],
-    },
-    {
-      title: "학교에서 서비스 운영하기",
-      event: "GDSC Soongsil 슈몰세미나 발표",
-      descriptions: [
-        "학내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유",
-      ],
-    },
-  ],
-  openSourceProjects: [
-    {
-      title: "Awards",
-      name: "Major Competitions",
-      features: [
-        {
-          title: "주요 대회 수상",
-          descriptions: [
-            "K-PaaS 활용 디지털 사회혁신 서비스 개발 공모전 금상 (2위) | 한국지능정보사회진흥원 (2023.12)",
-            "AI활용 온라인 개발대회 싱커톤 시즌3 최우수상 (2위) | 주식회사 엔터플 (2023.11)",
-          ],
-        },
-      ],
-    },
-    {
-      title: "Activities",
-      name: "Community",
-      features: [
-        {
-          title: "Google Developer Student Clubs (2023.10 - 2025.08)",
-          descriptions: [
-            "해외 봉사 개발 경험, 교내 서비스 운영 경험을 공유하고 기술 세션을 진행",
-            "CS 인터뷰/회고/테크 블로그 스터디 기획으로 ‘스터디를 가장 많이 운영한 멤버’ 선정",
-          ],
-        },
-        {
-          title: "YOURSSU Android Developer (2023.10 - 2024.12)",
-          descriptions: [
-            "숭실대 커뮤니티 '숨쉴때'와 디자인 시스템 'Handy' 개발",
-            "주 1회 안드로이드 스터디 동아리 참여",
-          ],
-        },
-      ],
-    },
-    {
-      title: "Education",
-      name: "Soongsil University",
-      features: [
-        {
-          title: "학력",
-          descriptions: [
-            "숭실대학교 컴퓨터학부 학사 (2021.03 - 2025.08)",
-            "ICT 유통물류 융합전공 이수",
-          ],
-        },
-        {
-          title: "교내 수상",
-          descriptions: [
-            "15회 숭실 캡스톤디자인 경진대회 장려상 (2025.10)",
-            "소프트웨어공모전 은상 (2025.07)",
-            "소프트웨어공모전 금상 (2023.08)",
-          ],
-        },
-      ],
-    },
-    {
-      title: "Certificates",
-      name: "Professional",
-      features: [
-        {
-          title: "자격",
-          descriptions: [
-            "정보처리기사 (2024.12)",
-            "SQLD (2025.12)",
-          ],
-        },
-      ],
-    },
-  ],
-  lastUpdatedAt: LAST_UPDATED_AT,
 };
-
-
 
