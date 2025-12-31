@@ -3,6 +3,7 @@ import { AboutMe } from "./components/about-me";
 import { LastUpdatedAt } from "./components/last-updated-at";
 import { Layout } from "./components/Layout";
 import { OpenSourceProject } from "./components/open-source-project";
+import { SimpleList } from "./components/simple-list";
 import { Presentation } from "./components/presentation";
 import { PersonalProject } from "./components/personal-project";
 import { Profile } from "./components/Profile";
@@ -18,12 +19,12 @@ function ResumeContent() {
       <AboutMe />
       <WorkExperience />
       <PersonalProject />
-      <OpenSourceProject title="Awards" sectionTitle="Award" />
+      <SimpleList title="Awards" sectionTitle="Award" sectionId="award" />
       <OpenSourceProject title="Activities" sectionTitle="Experience" />
       <Presentation />
-      <OpenSourceProject title="Interview" />
-      <OpenSourceProject title="Education" />
-      <OpenSourceProject title="Certificates" />
+      <SimpleList title="Interview" sectionId="interview" />
+      <SimpleList title="Education" sectionId="education" />
+      <SimpleList title="Certificates" sectionId="certificates" />
       <LastUpdatedAt />
     </Layout>
   );
