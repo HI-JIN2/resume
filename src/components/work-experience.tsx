@@ -18,7 +18,7 @@ export const WorkExperience = () => {
   const { experience } = useResumeData();
 
   return (
-    <Section title="Work Experience" mt={80}>
+    <Section title="Work Experience" mt={80} id="work-experience">
       <div className="flex flex-col gap-16">
         {experience.map(
           ({ corp, from, to, features, position, about = [] }, index) => (

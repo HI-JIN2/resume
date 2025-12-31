@@ -6,7 +6,7 @@ export const AboutMe = () => {
   const { about } = useResumeData();
 
   return (
-    <Section title="About">
+    <Section title="About" id="about">
       <div className="flex flex-col gap-8">
         {about.map(({ title, descriptions }, index) => (
           <div key={index}>

@@ -9,7 +9,7 @@ export const PersonalProject = () => {
   const { personalProjects } = useResumeData();
 
   return (
-    <Section title="Side Project" mt={80}>
+    <Section title="Side Project" mt={80} id="side-project">
       <div className="flex flex-col gap-16">
         {personalProjects.map((project) => (
           <TwoColumnWrapper

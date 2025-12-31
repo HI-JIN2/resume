@@ -9,7 +9,7 @@ export const Presentation = () => {
   const { presentations } = useResumeData();
 
   return (
-    <Section title="Presentation" mt={80}>
+    <Section title="Presentation" mt={80} id="presentation">
       <div className="flex flex-col gap-16">
         <TwoColumnWrapper
           left={

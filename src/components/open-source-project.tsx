@@ -22,10 +22,23 @@ export const OpenSourceProject = ({ title, sectionTitle }: Props = {}) => {
     return null;
   }
 
+  const getSectionId = (title: string): string => {
+    const idMap: Record<string, string> = {
+      "Awards": "award",
+      "Activities": "experience",
+      "Interview": "interview",
+      "Education": "education",
+      "Certificates": "certificates",
+    };
+    return idMap[title] || title.toLowerCase().replace(/\s+/g, "-");
+  };
+
   return (
     <>
-      {projectsToRender.map((project) => (
-        <Section key={project.title} title={sectionTitle || project.title} mt={80}>
+      {projectsToRender.map((project) => {
+        const sectionId = getSectionId(project.title);
+        return (
+          <Section key={project.title} title={sectionTitle || project.title} mt={80} id={sectionId}>
           <div className="flex flex-col gap-16">
             <TwoColumnWrapper
               left={
@@ -65,7 +78,8 @@ export const OpenSourceProject = ({ title, sectionTitle }: Props = {}) => {
             />
           </div>
         </Section>
-      ))}
+        );
+      })}
     </>
   );
 };
