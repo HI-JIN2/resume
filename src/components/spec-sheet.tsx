@@ -3,22 +3,15 @@ type Props = {
 };
 export const SpecSheet = ({ items }: Props) => {
   return (
-    <div className="flex flex-wrap">
-      {items.map((item, index) => {
-        const isLast = index === items.length - 1;
-        return (
-          <span
-            key={item}
-            className={
-              !isLast
-                ? "after:content-['|'] after:px-[7px] after:text-[0.9em] after:text-black/70"
-                : ""
-            }
-          >
-            {item}
-          </span>
-        );
-      })}
+    <div className="flex flex-wrap gap-2">
+      {items.map((item) => (
+        <span
+          key={item}
+          className="px-2.5 py-1 bg-[#f2f4f6] rounded-md text-sm text-[#4e5968]"
+        >
+          {item}
+        </span>
+      ))}
     </div>
   );
 };

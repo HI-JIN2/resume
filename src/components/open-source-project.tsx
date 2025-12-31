@@ -25,22 +25,22 @@ export const OpenSourceProject = ({ title, sectionTitle }: Props = {}) => {
   return (
     <>
       {projectsToRender.map((project) => (
-        <Section key={project.title} title={sectionTitle || project.title} mt={87}>
-          <div className="flex flex-col gap-[62px]">
+        <Section key={project.title} title={sectionTitle || project.title} mt={80}>
+          <div className="flex flex-col gap-16">
             <TwoColumnWrapper
               left={
                 <>
-                  <h3 className="relative text-xl font-semibold mb-1 whitespace-pre-line leading-[110%]">
+                  <h3 className="text-xl font-bold mb-2 text-[#191f28] whitespace-pre-line leading-tight">
                     {project.name}
                   </h3>
                   <LinkList links={project.links || []} />
                 </>
               }
               right={
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-10">
                   {project.features.map((feature, featureIndex) => (
                     <div key={`${project.title}-${featureIndex}`}>
-                      <h2 className="text-lg font-semibold mb-1">
+                      <h2 className="text-lg font-bold mb-3 text-[#191f28]">
                         {feature.title}
                       </h2>
                       <List
@@ -48,14 +48,14 @@ export const OpenSourceProject = ({ title, sectionTitle }: Props = {}) => {
                           const link = feature.links && feature.links[index];
                           if (link) {
                             return (
-                              <p key={index}>
+                              <p key={index} className="text-[#4e5968]">
                                 <Link href={link} target="_blank" rel="noopener noreferrer">
                                   {parseBold(description)}
                                 </Link>
                               </p>
                             );
                           }
-                          return <p key={index}>{parseBold(description)}</p>;
+                          return <p key={index} className="text-[#4e5968]">{parseBold(description)}</p>;
                         })}
                       />
                     </div>

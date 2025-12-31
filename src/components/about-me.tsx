@@ -7,13 +7,15 @@ export const AboutMe = () => {
 
   return (
     <Section title="About">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8">
         {about.map(({ title, descriptions }, index) => (
           <div key={index}>
-            <h3 className="font-semibold text-lg mb-1">{title}</h3>
-            <div className="flex flex-col gap-2">
+            <h3 className="font-semibold text-xl mb-3 text-[#191f28]">{title}</h3>
+            <div className="flex flex-col gap-3">
               {descriptions.map((description, descIndex) => (
-                <p key={descIndex}>{parseBold(description)}</p>
+                <p key={descIndex} className="text-[#4e5968] leading-relaxed">
+                  {parseBold(description)}
+                </p>
               ))}
             </div>
           </div>

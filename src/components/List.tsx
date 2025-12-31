@@ -6,14 +6,12 @@ type Props = {
 };
 export const List = ({ items, type = "disc" }: Props) => {
   return (
-    <ul className="ml-8">
+    <ul className="ml-6 space-y-2">
       {items.map((item, index) => (
         <li
           key={index}
           style={{ listStyleType: type }}
-          className={`relative leading-[1.4] break-keep ${
-            index < items.length - 1 ? "mb-[7px]" : ""
-          }`}
+          className="relative leading-relaxed break-keep text-[#4e5968]"
         >
           {item}
         </li>

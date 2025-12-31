@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "./link";
 
 type LinkItem = {
@@ -16,14 +15,11 @@ export const LinkList = ({ links }: Props) => {
   }
 
   return (
-    <div className="flex items-center gap-2 flex-wrap">
+    <div className="flex items-center gap-3 flex-wrap">
       {links.map((link, index) => (
-        <React.Fragment key={index}>
-          <Link target="_blank" href={link.url}>
-            {link.title}
-          </Link>
-          {index < links.length - 1 && <span className="text-black/40">|</span>}
-        </React.Fragment>
+        <Link key={index} target="_blank" href={link.url} className="text-sm">
+          {link.title}
+        </Link>
       ))}
     </div>
   );

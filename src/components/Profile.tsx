@@ -7,9 +7,9 @@ export const Profile = () => {
   const items = profile.links || [];
 
   return (
-    <Section title={profile.name} mb={52}>
-      <div className="flex max-sm:flex-col">
-        {items.map(({ label, value, href }, index) => {
+    <Section title={profile.name} mb={64}>
+      <div className="flex flex-wrap gap-x-6 gap-y-2">
+        {items.map(({ label, value, href }) => {
           const resolvedHref =
             href ||
             (value.startsWith("http")
@@ -17,24 +17,16 @@ export const Profile = () => {
               : value.includes("@")
               ? `mailto:${value}`
               : undefined);
-          const isLast = index === items.length - 1;
 
           return (
-            <div
-              key={`${label}-${value}`}
-              className={`relative ${
-                !isLast ? "mr-6 max-sm:mr-0 max-sm:mb-[7px]" : ""
-              } ${
-                !isLast
-                  ? "after:content-[''] after:absolute after:bottom-0 after:-right-3 after:h-full after:w-px after:bg-black/70 max-sm:after:hidden"
-                  : ""
-              }`}
-            >
-              <span className="font-medium mr-[7px]">{label}</span>
+            <div key={`${label}-${value}`} className="flex items-center gap-2">
+              <span className="text-[#8b95a1] text-sm font-medium">{label}</span>
               {resolvedHref ? (
-                <Link href={resolvedHref}>{value}</Link>
+                <Link href={resolvedHref} className="text-[#3182f6] hover:underline">
+                  {value}
+                </Link>
               ) : (
-                <span>{value}</span>
+                <span className="text-[#191f28]">{value}</span>
               )}
             </div>
           );

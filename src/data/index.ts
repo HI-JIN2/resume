@@ -211,8 +211,7 @@ const COMMON_OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
         {
           title: "학력",
           descriptions: [
-            "숭실대학교 컴퓨터학부 학사 (2021.03 - 2025.08)",
-            "ICT 유통물류 융합전공 이수",
+            "숭실대학교 컴퓨터학부 학사 / ICT 유통물류 융합전공 (2021.03 - 2025.08)",
             "대천여자고등학교 (2018.03 - 2021.01)",
           ],
         },

@@ -16,7 +16,7 @@ export const ResumeSwitcher = () => {
   const { type, setType } = useResume();
 
   return (
-    <div className="mb-10 flex flex-wrap gap-3">
+    <div className="mb-12 flex flex-wrap gap-2">
       {OPTIONS.map((option) => {
         const isActive = option.type === type;
 
@@ -26,13 +26,13 @@ export const ResumeSwitcher = () => {
             type="button"
             onClick={() => setType(option.type)}
             aria-pressed={isActive}
-            className={`flex flex-col rounded-2xl border px-4 py-3 text-left transition ${
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               isActive
-                ? "border-black bg-black text-white"
-                : "border-black/30 bg-white text-black"
+                ? "bg-[#191f28] text-white"
+                : "bg-[#f2f4f6] text-[#8b95a1] hover:bg-[#e5e8eb]"
             }`}
           >
-            <span className="text-sm font-semibold">{option.label}</span>
+            {option.label}
           </button>
         );
       })}

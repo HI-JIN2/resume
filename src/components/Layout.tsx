@@ -5,7 +5,7 @@ type Props = {
 };
 export const Layout = ({ children }: Props) => {
   return (
-    <main className="max-w-[1024px] w-full mx-auto pt-[62px] px-5 pb-8">
+    <main className="max-w-[900px] w-full mx-auto pt-16 px-6 pb-16">
       {children}
     </main>
   );

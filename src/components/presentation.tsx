@@ -9,18 +9,18 @@ export const Presentation = () => {
   const { presentations } = useResumeData();
 
   return (
-    <Section title="Presentation" mt={87}>
-      <div className="flex flex-col gap-[62px]">
+    <Section title="Presentation" mt={80}>
+      <div className="flex flex-col gap-16">
         <TwoColumnWrapper
           left={
             <>
-              <h3 className="relative text-xl font-semibold mb-1 whitespace-pre-line leading-[110%]">
+              <h3 className="text-xl font-bold mb-2 text-[#191f28] whitespace-pre-line leading-tight">
                 Presentation
               </h3>
             </>
           }
           right={
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-10">
               {presentations.map((presentation, index) => {
                 const timeline =
                   presentation.from && presentation.to
@@ -32,23 +32,23 @@ export const Presentation = () => {
                 return (
                   <div key={index}>
                     {presentation.link ? (
-                      <h2 className="text-lg font-semibold mb-1">
+                      <h2 className="text-lg font-bold mb-2 text-[#191f28]">
                         <Link href={presentation.link} target="_blank" rel="noopener noreferrer">
                           {presentation.title}
                         </Link>
                       </h2>
                     ) : (
-                      <h2 className="text-lg font-semibold mb-1">
+                      <h2 className="text-lg font-bold mb-2 text-[#191f28]">
                         {presentation.title}
                       </h2>
                     )}
-                    <div className="text-sm text-slate-600 mb-1">
+                    <div className="text-sm text-[#8b95a1] mb-4">
                       {presentation.event}
                       {timeline && ` · ${timeline}`}
                     </div>
                     <List
                       items={presentation.descriptions.map((description, descIndex) => (
-                        <p key={descIndex}>{parseBold(description)}</p>
+                        <p key={descIndex} className="text-[#4e5968]">{parseBold(description)}</p>
                       ))}
                     />
                   </div>
