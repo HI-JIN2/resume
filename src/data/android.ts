@@ -46,28 +46,53 @@ export const ANDROID_RESUME: ResumeVariant = {
       to: "2025.09",
       features: [
         {
-          title: "TMAP AUTO 디버깅용 Mock GPS 앱",
+          title: "TMAP AUTO 디버깅을 위한 Mock GPS 인터널 앱 개발",
           from: "2025.07",
           to: "2025.09",
           description:
-            "Mock GPS 데이터를 생성하는 안드로이드 앱을 개발해 차량 없이도 주행 로그를 재현하도록 지원",
+            "차량 없이도 주행 로그를 재현할 수 있도록 Mock GPS 데이터를 생성하는 안드로이드 앱 개발",
           achievements: [
-            "==Mock GPS== 앱으로 실제 차량 없이도 ==TMAP AUTO== 디버깅 환경을 확보",
-            "==I/O 버퍼== 확장과 배치 처리로 주행 로그 파싱 속도를 ==50.6%== 개선",
-            "==Base64== 인코딩 데이터 파싱 최적화로 기존 API 대비 처리 속도를 ==48%== 향상",
+            "차량 주행로그 파싱 시 발생하는 병목과 ==OOM==을 ==I/O 버퍼== 크기 확장, ==1000줄== 단위 배치 처리, 정규식 단순화로 파싱 속도 ==50.6%== 개선",
+            "경로 탐색으로 ==GPS== 생성시, ==Base64== 자사규격 데이터를 디코딩하여 기존 API 대비 ==48%== 속도 개선",
+            "==Compose== 화면에서 ==WebView==가 표시되지 않는 문제를 ==View layoutParams== 지정으로 해결",
           ],
           contributions: [
-            "==Mock GPS== 데이터 생성 파이프라인 성능 측정 지표를 추가하고 병목 구간을 시각화",
-            "정규식을 단순화하고 ==1,000줄== 단위 배치 처리 로직을 적용해 로그 파서 효율을 높임",
+            "주행 로그 파싱 성능 측정 지표를 추가하고 병목 구간을 시각화",
+            "정규식을 단순화하고 ==1000줄== 단위 배치 처리 로직을 적용해 로그 파서 효율을 높임",
             "==Jetpack Compose== UI와 ==Room== 캐시를 결합해 다양한 주행 시나리오를 즉시 전환하도록 설계",
           ],
           spec: [
             "Kotlin",
-            "Jetpack Compose",
-            "Multi-Module Architecture",
+            "Compose",
+            "Multi-Module",
             "Build Logic",
             "Room",
             "JUnit",
+          ],
+        },
+        {
+          title: "TMAP EDC SDK를 활용한 HUD Device 연동 프로젝트",
+          from: "2025.07",
+          to: "2025.09",
+          description:
+            "EDC SDK를 활용해 주행 정보를 HUD 디바이스로 전송하는 안드로이드 앱 개발",
+          achievements: [
+            "==EDC SDK== 리스너 콜백으로 ==1초==마다 수신되는 주행 정보를 ==Bundle==에서 파싱 후 UI 표출 및 ==HUD==로 ==BLE== 전송",
+            "==BLE write==의 비동기로 인한 통신 순서 불일치를 ==Command Queue==와 ==Flag==로 해결",
+            "==HUD==의 ==BLE== 프로토콜에 맞춰 ==3Byte== 데이터를 ==Big Endian== 방식으로 분할 전송",
+          ],
+          contributions: [
+            "==EDC SDK== 리스너 구현 및 주행 정보 파싱 로직 개발",
+            "==BLE== 통신 순서 보장을 위한 ==Command Queue== 패턴 구현",
+            "==HUD== 프로토콜에 맞는 데이터 변환 및 전송 로직 구현",
+          ],
+          spec: [
+            "Kotlin",
+            "Compose",
+            "Multi-Module",
+            "BLE",
+            "Hilt",
+            "Tmap EDC SDK",
           ],
         },
       ],
