@@ -6,7 +6,6 @@ import { TwoColumnWrapper } from "./two-column-wrapper";
 
 import { useResumeData } from "../context/resume-context";
 import { calculateDuration } from "../utils/calculate-duration";
-import { Description } from "./Description";
 import { parseBold } from "../utils/parse-bold";
 
 const renderTaskItems = (tasks: string[]) => {
@@ -19,7 +18,7 @@ export const WorkExperience = () => {
   const { experience } = useResumeData();
 
   return (
-    <Section title="Experience" mt={87}>
+    <Section title="Work Experience" mt={87}>
       <div className="flex flex-col gap-[62px]">
         {experience.map(
           ({ corp, from, to, features, position, about = [] }, index) => (
@@ -27,67 +26,72 @@ export const WorkExperience = () => {
               key={index}
               left={
                 <>
-                  <h3 className="relative text-[32px] font-normal mb-3 whitespace-pre-line leading-[110%] break-keep">
+                  <h3 className="relative text-xl font-semibold mb-1 whitespace-pre-line leading-[110%]">
                     {corp}
                   </h3>
 
                   {about.length > 0 && (
-                    <ul className="text-black/60 mb-3 break-keep">
+                    <ul className="text-black/60 mb-1 break-keep">
                       {about.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>
                   )}
-                  <div className="mb-1">{position}</div>
-                  <div>
-                    {from} - {to || "현재"}
+                  <div className="mb-3">
+                    {position}
+                    <div className="text-sm text-slate-600">
+                      {from} - {to || "현재"}
+                    </div>
                   </div>
                 </>
               }
               right={
-                <>
+                <div className="flex flex-col gap-8">
                   {features.map((feature, featureIndex) => {
                     return (
-                      <React.Fragment key={featureIndex}>
-                        <div>
-                          <h4 className="text-2xl font-normal mb-3">
-                            {feature.title}
-                          </h4>
+                      <div key={featureIndex}>
+                        <h2 className="text-lg font-semibold mb-3">
+                          {feature.title}
+                        </h2>
+                        <div className="text-sm text-slate-600 mb-4">
+                          <p>
+                            {feature.from} - {feature.to || "현재"} (
+                            {calculateDuration(feature.from, feature.to)}
+                            {"with" in feature &&
+                              feature.with &&
+                              ` · FE ${feature.with.fe}인, BE ${feature.with.be}인`}
+                            )
+                          </p>
+                          {feature.description && <p>{feature.description}</p>}
+                        </div>
 
-                          <div className=" text-black/60 mb-6">
-                            <p>
-                              {feature.from} - {feature.to || "현재"} (
-                              {calculateDuration(feature.from, feature.to)}
-                              {"with" in feature &&
-                                feature.with &&
-                                ` · FE ${feature.with.fe}인, BE ${feature.with.be}인`}
-                              )
-                            </p>
-                            <p>{feature.description}</p>
-                          </div>
-
-                          <Description title="환경">
+                        {feature.spec.length > 0 && (
+                          <div className="mb-4">
+                            <h3 className="text-base font-semibold mb-2">환경</h3>
                             <SpecSheet items={feature.spec} />
-                          </Description>
+                          </div>
+                        )}
 
-                          <Description title="성과">
+                        {feature.achievements.length > 0 && (
+                          <div className="mb-4">
+                            <h3 className="text-base font-semibold mb-2">성과</h3>
                             <List
                               items={renderTaskItems(feature.achievements)}
                             />
-                          </Description>
-                          <Description title="주요 기여">
+                          </div>
+                        )}
+                        {feature.contributions.length > 0 && (
+                          <div>
+                            <h3 className="text-base font-semibold mb-2">주요 기여</h3>
                             <List
                               items={renderTaskItems(feature.contributions)}
                             />
-                          </Description>
-                        </div>
-                        {featureIndex < features.length - 1 && (
-                          <div className="w-full h-px border-b border-black/80 my-8" />
+                          </div>
                         )}
-                      </React.Fragment>
+                      </div>
                     );
                   })}
-                </>
+                </div>
               }
             />
           )

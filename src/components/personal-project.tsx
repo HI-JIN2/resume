@@ -21,7 +21,9 @@ export const PersonalProject = () => {
                 </h3>
 
                 <div className="mb-3">
-                  {project.from} - {project.to || "현재"}
+                  {project.from === project.to
+                    ? project.from
+                    : `${project.from} - ${project.to || "현재"}`}
                 </div>
                 <LinkList links={project.links || []} />
               </>

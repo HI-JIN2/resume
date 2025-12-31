@@ -18,8 +18,12 @@ function ResumeContent() {
       <AboutMe />
       <WorkExperience />
       <PersonalProject />
+      <OpenSourceProject title="Awards" sectionTitle="Award" />
+      <OpenSourceProject title="Activities" sectionTitle="Experience" />
       <Presentation />
-      <OpenSourceProject />
+      <OpenSourceProject title="Interview" />
+      <OpenSourceProject title="Education" />
+      <OpenSourceProject title="Certificates" />
       <LastUpdatedAt />
     </Layout>
   );

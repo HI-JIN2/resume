@@ -59,6 +59,7 @@ type Presentation = {
   from?: string;
   to?: string;
   descriptions: string[];
+  link?: string;
 };
 
 type OpenSourceProject = {
@@ -71,6 +72,7 @@ type OpenSourceProject = {
   features: {
     title: string;
     descriptions: string[];
+    links?: string[];
   }[];
 };
 
@@ -98,8 +100,8 @@ const COMMON_PRESENTATIONS: Presentation[] = [
     event: "GDSC Soongsil 슈몰세미나 발표",
     descriptions: [
       "교내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유",
-      "https://www.youtube.com/watch?v=Qx719VFI6No",
     ],
+    link: "https://www.youtube.com/watch?v=Qx719VFI6No",
   },
   {
     title: "해외봉사가서 개발한 썰 푼다",
@@ -190,9 +192,14 @@ const COMMON_OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
         {
         title: "인터뷰 및 보도",
           descriptions: [
-          "숭실대학교 공식 유튜브, 팀플로 잇슈를 만든 거라고? | 숭실대학교 잇슈 팀 인터뷰 (https://www.youtube.com/watch?v=mCcEYAgV6uo&t=1s)",
-          "숭실대학교 영자신문편집국, Meet the EAT-SSU Team : Creating a Cafeteria Review App for SSU Student (http://www.sstimes.net/news/articleView.html?idxno=4052)",
-          "싱크트리 공식 블로그, [싱커톤 시즌 3 수상작 소개] 최우수상🥈 - ChatGPT와 함께하는 슬기로운 금융 목표 관리 서비스 <머니메이트> (https://blog.naver.com/synctree/223267230931)",
+          "숭실대학교 공식 유튜브, 팀플로 잇슈를 만든 거라고? | 숭실대학교 잇슈 팀 인터뷰",
+          "숭실대학교 영자신문편집국, Meet the EAT-SSU Team : Creating a Cafeteria Review App for SSU Student",
+          "싱크트리 공식 블로그, [싱커톤 시즌 3 수상작 소개] 최우수상🥈 - ChatGPT와 함께하는 슬기로운 금융 목표 관리 서비스 <머니메이트>",
+          ],
+          links: [
+            "https://www.youtube.com/watch?v=mCcEYAgV6uo&t=1s",
+            "http://www.sstimes.net/news/articleView.html?idxno=4052",
+            "https://blog.naver.com/synctree/223267230931",
           ],
         },
       ],
@@ -206,6 +213,7 @@ const COMMON_OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
           descriptions: [
             "숭실대학교 컴퓨터학부 학사 (2021.03 - 2025.08)",
             "ICT 유통물류 융합전공 이수",
+            "대천여자고등학교 (2018.03 - 2021.01)",
           ],
         },
       ],

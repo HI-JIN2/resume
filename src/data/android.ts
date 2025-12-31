@@ -143,7 +143,7 @@ export const ANDROID_RESUME: ResumeVariant = {
   ],
   personalProjects: [
     {
-      title: "EAT-SSU",
+      title: "EAT-SSU(잇슈)",
       from: "2022.11",
       to: "",
       links: [
