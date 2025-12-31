@@ -60,6 +60,21 @@ export const OpenSourceProject = ({ title, sectionTitle }: Props = {}) => {
                           items={feature.descriptions.map((description, index) => {
                             const link = feature.links && feature.links[index];
                             if (link) {
+                              // 콤마 기준으로 분리: 콤마 앞은 일반 텍스트, 콤마 뒤는 링크
+                              const commaIndex = description.indexOf(",");
+                              if (commaIndex !== -1) {
+                                const beforeComma = description.substring(0, commaIndex + 1);
+                                const afterComma = description.substring(commaIndex + 1).trim();
+                                return (
+                                  <p key={index} className="text-[#4e5968]">
+                                    {parseBold(beforeComma)}{" "}
+                                    <Link href={link} target="_blank" rel="noopener noreferrer">
+                                      {parseBold(afterComma)}
+                                    </Link>
+                                  </p>
+                                );
+                              }
+                              // 콤마가 없으면 전체를 링크로
                               return (
                                 <p key={index} className="text-[#4e5968]">
                                   <Link href={link} target="_blank" rel="noopener noreferrer">
