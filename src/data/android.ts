@@ -41,7 +41,7 @@ export const ANDROID_RESUME: ResumeVariant = {
     {
       corp: "SK 엠앤서비스",
       about: ["Biz솔루션사업본부 Mobility사업 담당", "(TMAP AUTO 솔루션 개발)"],
-      position: "Android Developer · Internship",
+      position: "Android Developer Intern",
       from: "2025.07",
       to: "2025.09",
       features: [
@@ -75,7 +75,7 @@ export const ANDROID_RESUME: ResumeVariant = {
     {
       corp: "레이시오",
       about: ["GPS 기반 사이클링 컴퓨터 스타트업"],
-      position: "Android Developer · ICT Internship",
+      position: "Android Developer · ICT Intern",
       from: "2024.09",
       to: "2024.12",
       features: [
@@ -97,16 +97,16 @@ export const ANDROID_RESUME: ResumeVariant = {
           spec: ["Kotlin", "Jetpack Compose", "BLE", "Service", "Coroutine"],
         },
         {
-          title: "trimm Cycling Center 앱 신기능 개발 및 유지보수",
+          title: "trimm Cycling Center",
           from: "2024.10",
           to: "2024.12",
           description:
-            "중장년층 베타테스터 피드백을 반영해 운동 목표 설정 UX를 개선하고 기존 기능을 안정화",
+            "앱 신기능 개발 및 유지보수",
           achievements: [
             "운동 목표 설정 기능 정식 출시로 사용자 맞춤 경험 강화",
           ],
           contributions: [
-            "중장년층 피드백을 토대로 depth를 줄여 접근성을 확보",
+            "중장년층 베타테스터 피드백을 토대로 depth를 줄여 접근성을 확보",
             "Thread.join 기반 동기 로직을 Coroutine 비동기로 전환해 실행 속도를 250ms에서 0.5ms로 단축",
             "Deprecated 라이브러리 제거와 최신 버전 교체로 유지보수성 향상",
           ],
@@ -117,7 +117,7 @@ export const ANDROID_RESUME: ResumeVariant = {
     {
       corp: "사각",
       about: ["마이데이터 기반 서비스 및 솔루션 스타트업"],
-      position: "Backend Developer · Internship",
+      position: "Backend Developer Intern",
       from: "2023.06",
       to: "2023.08",
       features: [

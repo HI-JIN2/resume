@@ -41,7 +41,7 @@ export const GENERAL_RESUME: ResumeVariant = {
     {
       corp: "SK 엠앤서비스",
       about: ["Biz솔루션사업본부 Mobility사업 담당", "(TMAP AUTO 솔루션 개발)"],
-      position: "Software Engineer · Internship",
+      position: "Software Engineer Intern",
       from: "2025.07",
       to: "2025.09",
       features: [
@@ -73,7 +73,7 @@ export const GENERAL_RESUME: ResumeVariant = {
     {
       corp: "레이시오",
       about: ["GPS 기반 사이클링 컴퓨터 스타트업"],
-      position: "Product Engineer · ICT Internship",
+      position: "Product Engineer · ICT Intern",
       from: "2024.09",
       to: "2024.12",
       features: [
@@ -99,7 +99,7 @@ export const GENERAL_RESUME: ResumeVariant = {
     {
       corp: "사각",
       about: ["마이데이터 기반 서비스 및 솔루션 스타트업"],
-      position: "Backend Developer · Internship",
+      position: "Backend Developer Intern",
       from: "2023.06",
       to: "2023.08",
       features: [
