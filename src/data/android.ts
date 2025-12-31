@@ -17,7 +17,8 @@ export const ANDROID_RESUME: ResumeVariant = {
     {
       title: "서비스를 끝까지 책임지는 개발자입니다.",
       descriptions: [
-        "학식 리뷰 앱 ==EAT-SSU==를 ==2년 7개월==간 운영하며 사용자 ==3,500명== 규모 서비스의 품질을 책임졌습니다.",
+        "하나의 기능이 아닌, 프로덕트 단위로 개발하고 운영한 경험이 있습니다.",
+        "학식 리뷰 앱 ==EAT-SSU==를 ==2년==간 운영하며 사용자 ==4,000명== 규모 서비스의 품질을 책임졌습니다.",
         "사용자 CS · 피드백 반영, UI/UX 개선, ==XML→Compose== 전환, 플레이스토어 정책 대응 등 '운영–개선–업데이트' 전체 사이클을 반복하며 성능 및 안정성을 개선했습니다.",
         "그 결과, 전년 대비 ==WAU/MAU==가 ==21.8% → 62.4%==로 상승하여 주간 재방문율과 서비스 Stickiness를 크게 개선했습니다.",
       ],
@@ -47,19 +48,17 @@ export const ANDROID_RESUME: ResumeVariant = {
       features: [
         {
           title: "TMAP AUTO 디버깅을 위한 Mock GPS 인터널 앱 개발",
-          from: "2025.07",
+          from: "2025.08",
           to: "2025.09",
           description:
             "차량 없이도 주행 로그를 재현할 수 있도록 Mock GPS 데이터를 생성하는 안드로이드 앱 개발",
-          achievements: [
+          achievements: [],
+          contributions: [
             "차량 주행로그 파싱 시 발생하는 병목과 ==OOM==을 ==I/O 버퍼== 크기 확장, ==1000줄== 단위 배치 처리, 정규식 단순화로 파싱 속도 ==50.6%== 개선",
             "경로 탐색으로 ==GPS== 생성시, ==Base64== 자사규격 데이터를 디코딩하여 기존 API 대비 ==48%== 속도 개선",
             "==Compose== 화면에서 ==WebView==가 표시되지 않는 문제를 ==View layoutParams== 지정으로 해결",
-          ],
-          contributions: [
-            "주행 로그 파싱 성능 측정 지표를 추가하고 병목 구간을 시각화",
-            "정규식을 단순화하고 ==1000줄== 단위 배치 처리 로직을 적용해 로그 파서 효율을 높임",
-            "==Jetpack Compose== UI와 ==Room== 캐시를 결합해 다양한 주행 시나리오를 즉시 전환하도록 설계",
+            "==Room==으로 다양한 주행 시나리오를 데이터를 로컬에 저장할 수 있도록 설계",
+
           ],
           spec: [
             "Kotlin",
@@ -73,18 +72,14 @@ export const ANDROID_RESUME: ResumeVariant = {
         {
           title: "TMAP EDC SDK를 활용한 HUD Device 연동 프로젝트",
           from: "2025.07",
-          to: "2025.09",
+          to: "2025.07",
           description:
             "EDC SDK를 활용해 주행 정보를 HUD 디바이스로 전송하는 안드로이드 앱 개발",
-          achievements: [
+          achievements: [],
+          contributions: [
             "==EDC SDK== 리스너 콜백으로 ==1초==마다 수신되는 주행 정보를 ==Bundle==에서 파싱 후 UI 표출 및 ==HUD==로 ==BLE== 전송",
             "==BLE write==의 비동기로 인한 통신 순서 불일치를 ==Command Queue==와 ==Flag==로 해결",
-            "==HUD==의 ==BLE== 프로토콜에 맞춰 ==3Byte== 데이터를 ==Big Endian== 방식으로 분할 전송",
-          ],
-          contributions: [
-            "==EDC SDK== 리스너 구현 및 주행 정보 파싱 로직 개발",
-            "==BLE== 통신 순서 보장을 위한 ==Command Queue== 패턴 구현",
-            "==HUD== 프로토콜에 맞는 데이터 변환 및 전송 로직 구현",
+            "==HUD==의 ==BLE== 프로토콜에 맞춰 ==3Byte== 데이터를 ==Big Endian== 방식으로 분할 전송 로직 구현",
           ],
           spec: [
             "Kotlin",
@@ -100,7 +95,7 @@ export const ANDROID_RESUME: ResumeVariant = {
     {
       corp: "레이시오",
       about: ["GPS 기반 사이클링 컴퓨터 스타트업"],
-      position: "Android Developer · ICT Intern",
+      position: "Android Developer Intern",
       from: "2024.09",
       to: "2024.12",
       features: [
@@ -109,15 +104,14 @@ export const ANDROID_RESUME: ResumeVariant = {
           from: "2024.09",
           to: "2024.09",
           description:
-            "BLE와 Compose UI로 전기자전거 주행 환경을 시뮬레이션하는 데모 앱 개발",
+            "해외 전시회에서 프로토타입을 시연해야 하는 상황에서, 실제 전기자전거 없이도 주행 신호를 송수신할 수 있는 데모 앱 개발",
           achievements: [
             "해외 전시회에서 해당 데모로 전기자전거 속도계를 시연해 파트너사 계약 체결에 기여",
-            "Foreground Service 기반 BLE 통신으로 백그라운드 상태에서도 안정적인 모킹 환경 제공",
           ],
           contributions: [
-            "BLE Advertising을 활용해 실제 기기 없이도 주행 신호를 송수신하도록 구현",
-            "LaunchedEffect(speed) 변화를 감지해 frameDuration을 재계산하며 자연스러운 속도 애니메이션 구성",
-            "서비스와 Notification 조합으로 앱이 백그라운드에 있어도 BLE 연결을 유지",
+            "==BLE Advertising==을 활용해 실제 기기 없이도 주행 신호를 송수신하도록 구현",
+            "==LaunchedEffect(speed)== 변화를 감지해 ==frameDuration==을 재계산하며 자연스러운 속도 애니메이션 구성",
+            "==Foreground Service==와 ==Notification== 조합으로 백그라운드 상태에서도 ==BLE== 연결 유지",
           ],
           spec: ["Kotlin", "Jetpack Compose", "BLE", "Service", "Coroutine"],
         },
@@ -132,7 +126,7 @@ export const ANDROID_RESUME: ResumeVariant = {
           ],
           contributions: [
             "중장년층 베타테스터 피드백을 토대로 depth를 줄여 접근성을 확보",
-            "==Thread.join== 기반 동기 로직을 ==Coroutine== 비동기로 전환해 실행 속도를 ==250ms==에서 ==0.5ms==로 단축",
+            "==Thread.join== 기반 동기 로직을 ==Coroutine== 비동기로 전환해 처리 속도를 ==250ms==에서 ==0.5ms==로 단축",
             "==Deprecated== 라이브러리 제거와 최신 버전 교체로 유지보수성 향상",
           ],
           spec: ["Kotlin", "XML", "Jetpack Compose", "Coroutine", "BLE"],
@@ -141,7 +135,7 @@ export const ANDROID_RESUME: ResumeVariant = {
     },
     {
       corp: "사각",
-      about: ["마이데이터 기반 서비스 및 솔루션 스타트업"],
+      about: ["마이데이터 및 헬스케어 B2C 스타트업"],
       position: "Backend Developer Intern",
       from: "2023.06",
       to: "2023.08",
@@ -153,13 +147,10 @@ export const ANDROID_RESUME: ResumeVariant = {
           description:
             "다양한 쇼핑몰 결제 내역을 통합 포맷으로 정규화하는 API를 TDD와 페어 프로그래밍으로 개발",
           achievements: [
-            "쇼핑몰별 다른 HTML 구조를 단일 포맷으로 통합해 마이데이터 활용 속도를 높임",
-            "테스트 코드 기반 릴리스로 배포 직후 버그 제로 상태를 유지",
+            "쇼핑몰별 다른 HTML 구조를 단일 포맷으로 통합해 마이데이터 활용을 높임",
           ],
           contributions: [
             "Selenium과 BeautifulSoup으로 로그인부터 상세 페이지까지 크롤링 파이프라인 구성",
-            "Flask API와 비동기 워커를 분리해 파싱 작업을 안정적으로 처리",
-            "도메인 규칙을 문서화하고 온보딩 가이드를 만들어 팀 확장 속도를 높임",
           ],
           spec: ["Python", "Selenium", "BeautifulSoup", "Flask"],
         },
@@ -188,8 +179,8 @@ export const ANDROID_RESUME: ResumeVariant = {
           ],
           contributions: [
             "레거시 ==XML== 구조를 ==MVVM + Clean Architecture==로 재설계하고 ==sealed UiState==로 일관된 로딩 경험 제공",
-            "==SharedFlow== 기반 ==UiEvent== 관리로 Toast 중첩 문제를 제거하고 ==suspend== 기반 이미지 업로드로 처리 안정성 확보",
-            "==Compressor== 기반 이미지 압축으로 용량을 ==84~93%== 절감해 ==S3== 비용을 최적화",
+            "==SharedFlow== 기반 ==UiEvent== 관리로 Toast 중첩 문제를 제거",
+            "==Compressor== 기반 이미지 압축으로 용량을 ==84~93%== 절감해 ==S3== 비용을 최적화하고 ==suspend== 기반 이미지 업로드로 처리 안정성 확보",
             "==Glance== 위젯 + ==WorkManager== + ==DataStore==를 결합해 위젯 자동 업데이트와 사용자 커스터마이징 기능 구현",
           ],
         },
