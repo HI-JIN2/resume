@@ -40,6 +40,7 @@ type PersonalProjectFeature = {
   title: string;
   achievements: string[];
   contributions: string[];
+  spec?: string[];
 };
 
 type PersonalProject = {

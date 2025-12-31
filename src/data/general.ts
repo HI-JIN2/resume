@@ -166,6 +166,22 @@ export const GENERAL_RESUME: ResumeVariant = {
       features: [
         {
           title: "학식 리뷰 · 식수 인사이트 서비스",
+          spec: [
+            "Kotlin",
+            "XML",
+            "Compose",
+            "Clean Architecture",
+            "MVVM",
+            "Hilt",
+            "Retrofit",
+            "Coroutine",
+            "Flow",
+            "WorkManager",
+            "Notification",
+            "Glance",
+            "Firebase",
+            "Gson",
+          ],
           achievements: [
             "학내 사용자 4,000+명을 확보하고 학식 운영 단위와 개선 논의를 진행",
             "Remote Config로 운영시간 변동을 실시간 반영해 운영팀 대응 시간을 1일 → 10분으로 단축",
@@ -185,6 +201,22 @@ export const GENERAL_RESUME: ResumeVariant = {
       features: [
         {
           title: "북한이탈주민 정착 지원 어시스턴트",
+          spec: [
+            "Kotlin",
+            "Compose",
+            "Navigation",
+            "Clean Architecture",
+            "MVVM",
+            "Multi-Module Architecture",
+            "Hilt",
+            "Ktor",
+            "Coroutine",
+            "Flow",
+            "Naver Maps",
+            "Coil",
+            "OPEN AI Realtime API",
+            "WebSocket",
+          ],
           achievements: [
             "15회 숭실 캡스톤디자인 장려상 수상 및 교과목 A학점 달성",
             "대화형 튜터 기능으로 인터뷰 대기시간을 50% 단축",
@@ -203,6 +235,12 @@ export const GENERAL_RESUME: ResumeVariant = {
       features: [
         {
           title: "봉사 현장 도서 등록 자동화 시스템",
+          spec: [
+            "Kotlin",
+            "ZXing(Scanner)",
+            "Google Books API",
+            "Google Spreadsheet API",
+          ],
           achievements: [
             "4시간 만에 MVP를 완성해 수작업 대비 6배 이상 빠르게 도서를 등록",
           ],

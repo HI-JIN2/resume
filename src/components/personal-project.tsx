@@ -3,6 +3,7 @@ import { parseBold } from "../utils/parse-bold";
 import { LinkList } from "./link-list";
 import { List } from "./List";
 import { Section } from "./Section";
+import { SpecSheet } from "./spec-sheet";
 import { TwoColumnWrapper } from "./two-column-wrapper";
 
 export const PersonalProject = () => {
@@ -48,7 +49,7 @@ export const PersonalProject = () => {
                       </div>
                     )}
                     {feature.contributions.length > 0 && (
-                      <div>
+                      <div className="mb-6">
                         <h3 className="text-sm font-semibold mb-3 text-[#191f28]">
                           주요 기여
                         </h3>
@@ -59,6 +60,12 @@ export const PersonalProject = () => {
                             )
                           )}
                         />
+                      </div>
+                    )}
+                    {feature.spec && feature.spec.length > 0 && (
+                      <div>
+                        <h3 className="text-sm font-semibold mb-3 text-[#191f28]"></h3>
+                        <SpecSheet items={feature.spec} />
                       </div>
                     )}
                   </div>

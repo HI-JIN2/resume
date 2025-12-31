@@ -171,6 +171,22 @@ export const ANDROID_RESUME: ResumeVariant = {
       features: [
         {
           title: "누적 가입자 4,000+명이 사용하는 학식 리뷰 서비스 기획 · 개발 · 운영",
+          spec: [
+            "Kotlin",
+            "XML",
+            "Compose",
+            "Clean Architecture",
+            "MVVM",
+            "Hilt",
+            "Retrofit",
+            "Coroutine",
+            "Flow",
+            "WorkManager",
+            "Notification",
+            "Glance",
+            "Firebase",
+            "Gson",
+          ],
           achievements: [
             "==Crashlytics== 로그 분석으로 ==15건== 이상의 주요 크래시를 해결해 비정상 종료율 ==0%== 유지",
             "==40회== 이상 업데이트와 플레이스토어·에브리타임·인스타그램 피드백 채널로 사용자 요구를 빠르게 반영",
@@ -199,6 +215,22 @@ export const ANDROID_RESUME: ResumeVariant = {
       features: [
         {
           title: "북한이탈주민 정착 지원 서비스 안드로이드 앱",
+          spec: [
+            "Kotlin",
+            "Compose",
+            "Navigation",
+            "Clean Architecture",
+            "MVVM",
+            "Multi-Module Architecture",
+            "Hilt",
+            "Ktor",
+            "Coroutine",
+            "Flow",
+            "Naver Maps",
+            "Coil",
+            "OPEN AI Realtime API",
+            "WebSocket",
+          ],
           achievements: [
             "15회 숭실 캡스톤디자인 경진대회 장려상 수상",
             "전공종합설계 교과목 A학점 달성",
@@ -223,8 +255,15 @@ export const ANDROID_RESUME: ResumeVariant = {
       ],
       features: [
         {
-          title: "해외 봉사 현장에서 500권 이상의 도서를 빠르게 등록하기 위한 안드로이드 기반 시스템",
+          title: "ISBN 기반 도서 전산 자동화 시스템 (개인 프로젝트)",
+          spec: [
+            "Kotlin",
+            "ZXing(Scanner)",
+            "Google Books API",
+            "Google Spreadsheet API",
+          ],
           achievements: [
+            "인도네시아 해외봉사 중, 500권 이상의 도서를 빠르게 등록하기 위한 자동화 시스템",
             "4시간 만에 MVP를 완성해 수작업 대비 6배 이상의 등록 효율을 달성",
           ],
           contributions: [

@@ -70,13 +70,6 @@ export const WorkExperience = () => {
                           {feature.description && <p className="text-[#4e5968]">{feature.description}</p>}
                         </div>
 
-                        {feature.spec.length > 0 && (
-                          <div className="mb-6">
-                            <h3 className="text-sm font-semibold mb-3 text-[#191f28]">환경</h3>
-                            <SpecSheet items={feature.spec} />
-                          </div>
-                        )}
-
                         {feature.achievements.length > 0 && (
                           <div className="mb-6">
                             <h3 className="text-sm font-semibold mb-3 text-[#191f28]">성과</h3>
@@ -86,11 +79,17 @@ export const WorkExperience = () => {
                           </div>
                         )}
                         {feature.contributions.length > 0 && (
-                          <div>
+                          <div className="mb-6">
                             <h3 className="text-sm font-semibold mb-3 text-[#191f28]">주요 기여</h3>
                             <List
                               items={renderTaskItems(feature.contributions)}
                             />
+                          </div>
+                        )}
+                        {feature.spec.length > 0 && (
+                          <div>
+                            <h3 className="text-sm font-semibold mb-3 text-[#191f28]"></h3>
+                            <SpecSheet items={feature.spec} />
                           </div>
                         )}
                       </div>
