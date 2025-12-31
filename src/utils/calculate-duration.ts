@@ -19,8 +19,7 @@ export const calculateDuration = (from: string, to?: string): string => {
 
   // 개월 차이 계산
   const months = endDate.diff(startDate, "month", true); // 소수점 포함
-  // 시작·종료 월 모두 포함하도록 +1개월 보정, 음수 방지
-  const roundedMonths = Math.max(0, Math.round(months)) + 1;
+  const roundedMonths = Math.round(months); // 반올림
 
   return isOngoing ? `${roundedMonths}개월+` : `${roundedMonths}개월`;
 };

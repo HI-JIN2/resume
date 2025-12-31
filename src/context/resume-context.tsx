@@ -5,6 +5,7 @@ import {
   useMemo,
   useState,
 } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   DEFAULT_RESUME_TYPE,
   ResumeContent,
@@ -20,39 +21,44 @@ type ResumeContextValue = {
 
 const ResumeContext = createContext<ResumeContextValue | null>(null);
 
-const resolveInitialType = (): ResumeType => {
-  if (typeof window === "undefined") {
-    return DEFAULT_RESUME_TYPE;
-  }
-
-  const [, firstSegment] = window.location.pathname.split("/");
-  if (firstSegment === "general") {
+const resolveInitialType = (pathname: string): ResumeType => {
+  // basename이 /resume이므로 실제 pathname은 /, /android, /general
+  if (pathname === "/general" || pathname === "/resume/general") {
     return "general";
   }
-  return "android";
-};
-
-const syncPath = (type: ResumeType) => {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  const targetPath = type === "general" ? "/general" : "/android";
-  if (window.location.pathname !== targetPath) {
-    window.history.replaceState({}, "", targetPath);
-  }
+  // /, /android, /resume, /resume/android는 모두 android로 처리
+  return DEFAULT_RESUME_TYPE;
 };
 
 export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [type, setType] = useState<ResumeType>(() => resolveInitialType());
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [type, setType] = useState<ResumeType>(() =>
+    resolveInitialType(location.pathname)
+  );
   const data = useMemo(() => getResumeContent(type), [type]);
 
+  // 경로 변경 시 타입 업데이트
   useEffect(() => {
-    syncPath(type);
-  }, [type]);
+    const newType = resolveInitialType(location.pathname);
+    if (newType !== type) {
+      setType(newType);
+    }
+  }, [location.pathname, type]);
+
+  // 타입 변경 시 경로 업데이트
+  const handleSetType = (newType: ResumeType) => {
+    setType(newType);
+    if (newType === "general") {
+      navigate("/general", { replace: true });
+    } else {
+      // android는 /로 이동 (기본값, basename이 /resume이므로 실제로는 /resume)
+      navigate("/", { replace: true });
+    }
+  };
 
   return (
-    <ResumeContext.Provider value={{ type, data, setType }}>
+    <ResumeContext.Provider value={{ type, data, setType: handleSetType }}>
       {children}
     </ResumeContext.Provider>
   );

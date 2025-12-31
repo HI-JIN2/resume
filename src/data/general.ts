@@ -1,4 +1,4 @@
-import type { ResumeContent } from "./types";
+import type { ResumeContent } from "./index";
 
 const LAST_UPDATED_AT = "2025. 12. 10";
 
@@ -125,7 +125,7 @@ export const GENERAL_RESUME: ResumeContent = {
       ],
     },
   ],
-  projects: [
+  personalProjects: [
     {
       title: "EAT-SSU",
       from: "2022.11",

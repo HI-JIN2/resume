@@ -1,26 +1,61 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AboutMe } from "./components/about-me";
 import { LastUpdatedAt } from "./components/last-updated-at";
 import { Layout } from "./components/Layout";
 import { OpenSourceProject } from "./components/open-source-project";
 import { Presentation } from "./components/presentation";
-import { Project } from "./components/project";
+import { PersonalProject } from "./components/personal-project";
 import { Profile } from "./components/Profile";
+import { ResumeSwitcher } from "./components/resume-switcher";
 import { WorkExperience } from "./components/work-experience";
 import { ResumeProvider } from "./context/resume-context";
 
+function ResumeContent() {
+  return (
+    <Layout>
+      <ResumeSwitcher />
+      <Profile />
+      <AboutMe />
+      <WorkExperience />
+      <PersonalProject />
+      <Presentation />
+      <OpenSourceProject />
+      <LastUpdatedAt />
+    </Layout>
+  );
+}
+
 function App() {
   return (
-    <ResumeProvider>
-      <Layout>
-        <Profile />
-        <AboutMe />
-        <WorkExperience />
-        <Project />
-        <Presentation />
-        <OpenSourceProject />
-        <LastUpdatedAt />
-      </Layout>
-    </ResumeProvider>
+    <BrowserRouter basename="/resume">
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <ResumeProvider>
+              <ResumeContent />
+            </ResumeProvider>
+          }
+        />
+        <Route
+          path="/android"
+          element={
+            <ResumeProvider>
+              <ResumeContent />
+            </ResumeProvider>
+          }
+        />
+        <Route
+          path="/general"
+          element={
+            <ResumeProvider>
+              <ResumeContent />
+            </ResumeProvider>
+          }
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
