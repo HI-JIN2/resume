@@ -218,7 +218,7 @@ const COMMON_OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
       ],
     },
     {
-      title: "Certificates",
+      title: "Certificate",
       name: "Professional",
       features: [
         {
