@@ -132,7 +132,7 @@ const COMMON_ACTIVITIES: OpenSourceProject[] = [
         title: "Google Developer Student Clubs 3, 4기 (2023.10 - 2025.08)",
         descriptions: [
           "해외 봉사 개발 경험, 교내 서비스 운영 경험 공유 세션 진행",
-          "CS 인터뷰/회고/테크 블로그 스터디 등을 기획/ 운영해 '스터디를 가장 많이 운영한 멤버' 선정",
+          "CS 인터뷰/회고/테크 블로그 스터디 등을 기획, 운영해 '스터디를 가장 많이 운영한 멤버' 선정",
         ],
       },
       {
@@ -158,7 +158,7 @@ const COMMON_ACTIVITIES: OpenSourceProject[] = [
         title: "UMC 4th SSU Vice Lead & Spring Boot (2023.03 - 2023.08)",
         descriptions: [
           "UMC 숭실대 부리더 및 숭실대 제1회 DEVCON 주최 및 운영(참여자 400명 규모)",
-          "Spring Boot 스터디 참여 및 프로젝트 진행)",
+          "Spring Boot 스터디 참여 및 프로젝트 진행",
         ],
       },
       {

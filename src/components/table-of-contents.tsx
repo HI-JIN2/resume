@@ -10,7 +10,7 @@ const SECTIONS: Section[] = [
   { id: "work-experience", title: "Work Experience" },
   { id: "side-project", title: "Side Project" },
   { id: "award", title: "Award" },
-  { id: "experience", title: "Experience" },
+  { id: "community", title: "Community" },
   { id: "presentation", title: "Presentation" },
   { id: "interview", title: "Interview" },
   { id: "education", title: "Education" },

@@ -20,7 +20,7 @@ function ResumeContent() {
       <WorkExperience />
       <PersonalProject />
       <SimpleList title="Awards" sectionTitle="Award" sectionId="award" />
-      <OpenSourceProject title="Activities" sectionTitle="Experience" />
+      <OpenSourceProject title="Community" sectionTitle="Community" />
       <Presentation />
       <SimpleList title="Interview" sectionId="interview" />
       <SimpleList title="Education" sectionId="education" />
