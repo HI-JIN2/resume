@@ -5,7 +5,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   DEFAULT_RESUME_TYPE,
   ResumeContent,
@@ -21,40 +21,41 @@ type ResumeContextValue = {
 
 const ResumeContext = createContext<ResumeContextValue | null>(null);
 
-const resolveInitialType = (pathname: string): ResumeType => {
-  // basename이 /resume이므로 실제 pathname은 /, /android, /general
-  if (pathname === "/general" || pathname === "/resume/general") {
+const resolveInitialType = (searchParams: URLSearchParams): ResumeType => {
+  // 쿼리 파라미터에서 General=true 확인
+  if (searchParams.get("General") === "true") {
     return "general";
   }
-  // /, /android, /resume, /resume/android는 모두 android로 처리
+  // 기본값은 android
   return DEFAULT_RESUME_TYPE;
 };
 
 export const ResumeProvider = ({ children }: { children: React.ReactNode }) => {
-  const location = useLocation();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [type, setType] = useState<ResumeType>(() =>
-    resolveInitialType(location.pathname)
+    resolveInitialType(searchParams)
   );
   const data = useMemo(() => getResumeContent(type), [type]);
 
-  // 경로 변경 시 타입 업데이트
+  // 쿼리 파라미터 변경 시 타입 업데이트
   useEffect(() => {
-    const newType = resolveInitialType(location.pathname);
+    const newType = resolveInitialType(searchParams);
     if (newType !== type) {
       setType(newType);
     }
-  }, [location.pathname, type]);
+  }, [searchParams, type]);
 
-  // 타입 변경 시 경로 업데이트
+  // 타입 변경 시 쿼리 파라미터 업데이트
   const handleSetType = (newType: ResumeType) => {
     setType(newType);
+    const newSearchParams = new URLSearchParams(searchParams);
     if (newType === "general") {
-      navigate("/general", { replace: true });
+      newSearchParams.set("General", "true");
     } else {
-      // android는 /로 이동 (기본값, basename이 /resume이므로 실제로는 /resume)
-      navigate("/", { replace: true });
+      newSearchParams.delete("General");
     }
+    navigate({ pathname: "/", search: newSearchParams.toString() }, { replace: true });
   };
 
   return (

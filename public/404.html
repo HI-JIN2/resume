@@ -5,24 +5,41 @@
     <title>Redirecting...</title>
     <script>
       // GitHub Pages에서 SPA 라우팅을 지원하기 위한 404 페이지
-      // 현재 경로를 sessionStorage에 저장하고 index.html로 리다이렉트
+      // 경로를 쿼리 파라미터로 변환하여 index.html로 리다이렉트
       var path = window.location.pathname;
       var search = window.location.search;
       var hash = window.location.hash;
       
-      // /resume/general -> /resume/index.html로 리다이렉트하되 경로 정보 저장
+      // /resume/general -> /resume?General=true로 변환
       var segments = path.split('/').filter(Boolean);
       var resumeIndex = segments.indexOf('resume');
       
+      var redirectPath = '/resume/index.html';
+      
       if (resumeIndex !== -1 && segments.length > resumeIndex + 1) {
-        // /resume/general -> /general (basename 제거)
-        var route = '/' + segments.slice(resumeIndex + 1).join('/');
-        // sessionStorage에 경로 저장
-        sessionStorage.setItem('redirectPath', route + search + hash);
+        // /resume/general -> General=true 쿼리 파라미터로 변환
+        var route = segments.slice(resumeIndex + 1).join('/');
+        if (route === 'general') {
+          var params = new URLSearchParams(search);
+          params.set('General', 'true');
+          redirectPath += '?' + params.toString();
+        } else {
+          // 다른 경로는 기존 쿼리 파라미터 유지
+          if (search) {
+            redirectPath += search;
+          }
+        }
+      } else {
+        // 기본 경로는 기존 쿼리 파라미터 유지
+        if (search) {
+          redirectPath += search;
+        }
       }
       
-      // index.html로 리다이렉트
-      var redirectPath = '/resume/index.html';
+      if (hash) {
+        redirectPath += hash;
+      }
+      
       window.location.replace(redirectPath);
     </script>
     <meta http-equiv="refresh" content="0; url=/resume/index.html">

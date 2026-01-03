@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { AboutMe } from "./components/about-me";
 import { LastUpdatedAt } from "./components/last-updated-at";
 import { Layout } from "./components/Layout";
@@ -19,22 +19,13 @@ function RedirectHandler() {
     // trailing slash 제거
     if (location.pathname !== '/' && location.pathname.endsWith('/')) {
       const pathWithoutSlash = location.pathname.slice(0, -1);
-      navigate(pathWithoutSlash + location.search + location.hash, { replace: true });
+      navigate({ pathname: pathWithoutSlash, search: location.search, hash: location.hash }, { replace: true });
       return;
     }
     
-    // 404.html에서 sessionStorage에 저장한 경로 복원
-    const redirectPath = sessionStorage.getItem('redirectPath');
-    if (redirectPath) {
-      sessionStorage.removeItem('redirectPath');
-      // trailing slash 제거
-      const normalizedPath = redirectPath.endsWith('/') && redirectPath !== '/' 
-        ? redirectPath.slice(0, -1) 
-        : redirectPath;
-      // 경로가 현재 경로와 다를 때만 리다이렉트
-      if (location.pathname + location.search + location.hash !== normalizedPath) {
-        navigate(normalizedPath, { replace: true });
-      }
+    // 경로가 /가 아니면 /로 리다이렉트 (쿼리 파라미터는 유지)
+    if (location.pathname !== '/') {
+      navigate({ pathname: '/', search: location.search, hash: location.hash }, { replace: true });
     }
   }, [navigate, location]);
   
@@ -67,30 +58,13 @@ function App() {
     <BrowserRouter basename="/resume">
       <Routes>
         <Route
-          path="/"
+          path="/*"
           element={
             <ResumeProvider>
               <ResumeContent />
             </ResumeProvider>
           }
         />
-        <Route
-          path="/android"
-          element={
-            <ResumeProvider>
-              <ResumeContent />
-            </ResumeProvider>
-          }
-        />
-        <Route
-          path="/general"
-          element={
-            <ResumeProvider>
-              <ResumeContent />
-            </ResumeProvider>
-          }
-        />
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
