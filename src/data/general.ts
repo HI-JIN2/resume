@@ -203,6 +203,28 @@ export const GENERAL_RESUME: ResumeVariant = {
       ],
     },
     {
+      title: "마니또 파티",
+      from: "2025.12",
+      to: "",
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/HI-JIN2/manitto-backend",
+        },
+      ],
+      features: [
+        {
+          title: "마니또 배정 이메일 전송 서비스",
+          achievements: [
+            "웹 풀스택 1인 개발 및 운영",
+          ],
+          contributions: [
+            "마니또 배정 알고리즘 구현 및 이메일 자동 전송 시스템 구축",
+          ],
+        },
+      ],
+    },
+    {
       title: "새길",
       from: "2025.03",
       to: "2025.07",
@@ -269,6 +291,53 @@ export const GENERAL_RESUME: ResumeVariant = {
           contributions: [
             "==ISBN== 바코드 스캔 → ==Google Books API== 조회 → ==Google Spreadsheet== 저장을 자동화해 ==1권당 1분== 걸리던 작업을 ==10초==로 단축",
             "비개발자 봉사단원을 위해 ==Google Apps Script==로 Spreadsheet를 데이터베이스처럼 활용하도록 설계",
+          ],
+        },
+      ],
+    },
+    {
+      title: "COOING",
+      from: "2023.10",
+      to: "2023.12",
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/COOING-team/COOING-Server",
+        },
+      ],
+      features: [
+        {
+          title: "쿠잉, 아이의 음성으로 쓰는 성장일기",
+          achievements: [
+            "백엔드 개발 및 인프라 구축",
+          ],
+          contributions: [
+            "음성 데이터 처리 및 저장 시스템 개발",
+            "서버 인프라 설계 및 운영",
+          ],
+        },
+      ],
+    },
+    {
+      title: "머니메이트",
+      from: "2023.10",
+      to: "2023.11",
+      links: [
+        {
+          title: "GitHub",
+          url: "https://github.com/MoneyMate-project/MoneyMate",
+        },
+      ],
+      features: [
+        {
+          title: "금융 API와 AI를 활용한 금융조언 앱",
+          achievements: [
+            "AI활용 온라인 개발대회 싱커톤 시즌3 최우수상(2위) 수상",
+          ],
+          contributions: [
+            "안드로이드 개발, 백엔드, 프롬프팅 담당",
+            "팀장으로 프로젝트 리드",
+            "금융 API 연동 및 AI 기반 금융 조언 기능 구현",
           ],
         },
       ],
