@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages에서 SPA 라우팅을 지원하기 위한 404 페이지
+      // 모든 경로를 index.html로 리다이렉트 (React Router가 클라이언트 사이드에서 처리)
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      
+      // basename이 /resume이므로 /resume/index.html로 리다이렉트
+      // React Router가 경로를 처리함
+      var redirectPath = '/resume/index.html';
+      
+      // 쿼리 파라미터와 해시가 있으면 유지
+      if (search) {
+        redirectPath += search;
+      }
+      if (hash) {
+        redirectPath += hash;
+      }
+      
+      window.location.replace(redirectPath);
+    </script>
+    <meta http-equiv="refresh" content="0; url=/resume/index.html">
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
+
