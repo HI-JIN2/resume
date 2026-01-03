@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
 import { AboutMe } from "./components/about-me";
 import { LastUpdatedAt } from "./components/last-updated-at";
 import { Layout } from "./components/Layout";
@@ -13,18 +13,30 @@ import { ResumeProvider } from "./context/resume-context";
 
 function RedirectHandler() {
   const navigate = useNavigate();
+  const location = useLocation();
   
   useEffect(() => {
+    // trailing slash 제거
+    if (location.pathname !== '/' && location.pathname.endsWith('/')) {
+      const pathWithoutSlash = location.pathname.slice(0, -1);
+      navigate(pathWithoutSlash + location.search + location.hash, { replace: true });
+      return;
+    }
+    
     // 404.html에서 sessionStorage에 저장한 경로 복원
     const redirectPath = sessionStorage.getItem('redirectPath');
     if (redirectPath) {
       sessionStorage.removeItem('redirectPath');
+      // trailing slash 제거
+      const normalizedPath = redirectPath.endsWith('/') && redirectPath !== '/' 
+        ? redirectPath.slice(0, -1) 
+        : redirectPath;
       // 경로가 현재 경로와 다를 때만 리다이렉트
-      if (window.location.pathname + window.location.search + window.location.hash !== redirectPath) {
-        navigate(redirectPath, { replace: true });
+      if (location.pathname + location.search + location.hash !== normalizedPath) {
+        navigate(normalizedPath, { replace: true });
       }
     }
-  }, [navigate]);
+  }, [navigate, location]);
   
   return null;
 }
