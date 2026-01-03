@@ -9,7 +9,7 @@ export const ResumeSwitcher = () => {
   };
 
   return (
-    <div className="absolute top-16 right-6 z-50">
+    <div className="absolute top-4 right-6 xl:top-16 z-50">
       <button
         type="button"
         onClick={toggleType}
