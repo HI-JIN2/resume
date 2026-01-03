@@ -15,27 +15,39 @@ export const ResumeSwitcher = () => {
         onClick={toggleType}
         aria-label={`Switch to ${isAndroid ? "General" : "Android"} resume`}
         aria-pressed={isAndroid}
-        className="
-          relative inline-flex h-7 w-12 items-center
+        className={`
+          relative inline-flex h-8 w-18 items-center px-2
           rounded-full
-          !bg-[#FF6B35]
-          transition-colors duration-200
+          transition-all duration-300 ease-in-out
           outline-none
           focus:outline-none
           active:outline-none
           focus-visible:outline-none
-        "
+          ${isAndroid ? "!bg-[#FF6B35] justify-start" : "!bg-[#e5e8eb] justify-end"}
+        `}
       >
         <span
           className={`
-            inline-block h-5 w-5
+            absolute h-6 w-6
             rounded-full
             !bg-white
             shadow-sm
-            transition-transform duration-200
-            ${isAndroid ? "translate-x-6" : "translate-x-1"}
+            transition-all duration-300 ease-in-out
+            transform
+            ${isAndroid ? "right-1 translate-x-0" : "left-1 translate-x-0"}
+            hover:scale-110
+            active:scale-95
           `}
         />
+        {isAndroid ? (
+          <span className="relative z-10 text-[10px] font-medium text-white/80 ml-2 mr-6 transition-opacity duration-300 ease-in-out">
+            android
+          </span>
+        ) : (
+          <span className="relative z-10 text-[10px] font-medium text-[#8b95a1] ml-6 mr-2 transition-opacity duration-300 ease-in-out">
+            general
+          </span>
+        )}
       </button>
     </div>
   );
