@@ -98,14 +98,14 @@ const LAST_UPDATED_AT = "2025. 12. 10";
 // 공통 데이터
 const COMMON_PRESENTATIONS: Presentation[] = [
   {
-    title: "해외봉사가서 개발한 썰 푼다",
-    event: "GDGoC SSUMALL SEMINAR",
-    descriptions: ["제한된 환경에서 문제를 빠르게 해결한 안드로이드 개발 사례 공유"],
-  },
-  {
     title: "ICT 인턴십제도와 스타트업 인턴 후기",
     event: "GDGoC SSUMALL SEMINAR",
     descriptions: ["스타트업 인턴십 경험과 ICT 인턴십제도 소개"],
+  },
+  {
+    title: "해외봉사가서 개발한 썰 푼다",
+    event: "GDGoC SSUMALL SEMINAR",
+    descriptions: ["제한된 환경에서 문제를 빠르게 해결한 안드로이드 개발 사례 공유"],
   },
   {
     title: "학교에서 서비스 운영하기",
