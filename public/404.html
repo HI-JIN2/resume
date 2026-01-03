@@ -5,52 +5,25 @@
     <title>Redirecting...</title>
     <script>
       // GitHub Pages에서 SPA 라우팅을 지원하기 위한 404 페이지
-      // 현재 경로를 유지하면서 index.html로 리다이렉트
+      // 현재 경로를 sessionStorage에 저장하고 index.html로 리다이렉트
       var path = window.location.pathname;
       var search = window.location.search;
       var hash = window.location.hash;
       
-      // /resume/general -> /resume/index.html로 리다이렉트하되 경로 정보 유지
-      // React Router가 basename="/resume"으로 설정되어 있으므로
-      // /resume/index.html로 리다이렉트하면 React Router가 경로를 잃어버림
-      // 따라서 현재 경로를 그대로 유지하면서 index.html로 리다이렉트
-      
-      // /resume/general 같은 경로에서 /resume/index.html로 리다이렉트
-      // 하지만 이렇게 하면 경로 정보가 손실됨
-      // 대신 현재 경로를 해시나 쿼리로 전달하거나, 
-      // 또는 단순히 /resume/index.html로 리다이렉트하고
-      // React Router가 history API로 경로를 복원하도록 함
-      
-      // 가장 간단한 방법: /resume/index.html로 리다이렉트하고
-      // React Router가 window.location.pathname을 읽어서 경로를 복원하도록 함
-      // 하지만 이건 작동하지 않을 수 있음
-      
-      // 더 나은 방법: 현재 경로를 쿼리 파라미터로 전달
+      // /resume/general -> /resume/index.html로 리다이렉트하되 경로 정보 저장
       var segments = path.split('/').filter(Boolean);
       var resumeIndex = segments.indexOf('resume');
       
       if (resumeIndex !== -1 && segments.length > resumeIndex + 1) {
-        // /resume/general -> /resume/index.html?redirect=/general
+        // /resume/general -> /general (basename 제거)
         var route = '/' + segments.slice(resumeIndex + 1).join('/');
-        var redirectPath = '/resume/index.html?redirect=' + encodeURIComponent(route);
-        if (search) {
-          redirectPath += '&' + search.substring(1);
-        }
-        if (hash) {
-          redirectPath += hash;
-        }
-        window.location.replace(redirectPath);
-      } else {
-        // 기본 경로
-        var redirectPath = '/resume/index.html';
-        if (search) {
-          redirectPath += search;
-        }
-        if (hash) {
-          redirectPath += hash;
-        }
-        window.location.replace(redirectPath);
+        // sessionStorage에 경로 저장
+        sessionStorage.setItem('redirectPath', route + search + hash);
       }
+      
+      // index.html로 리다이렉트
+      var redirectPath = '/resume/index.html';
+      window.location.replace(redirectPath);
     </script>
     <meta http-equiv="refresh" content="0; url=/resume/index.html">
   </head>

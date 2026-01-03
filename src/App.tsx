@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate, useSearchParams, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { AboutMe } from "./components/about-me";
 import { LastUpdatedAt } from "./components/last-updated-at";
 import { Layout } from "./components/Layout";
@@ -12,16 +12,19 @@ import { WorkExperience } from "./components/work-experience";
 import { ResumeProvider } from "./context/resume-context";
 
 function RedirectHandler() {
-  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   
   useEffect(() => {
-    // 404.html에서 전달한 redirect 쿼리 파라미터 처리
-    const redirect = searchParams.get('redirect');
-    if (redirect) {
-      navigate(redirect, { replace: true });
+    // 404.html에서 sessionStorage에 저장한 경로 복원
+    const redirectPath = sessionStorage.getItem('redirectPath');
+    if (redirectPath) {
+      sessionStorage.removeItem('redirectPath');
+      // 경로가 현재 경로와 다를 때만 리다이렉트
+      if (window.location.pathname + window.location.search + window.location.hash !== redirectPath) {
+        navigate(redirectPath, { replace: true });
+      }
     }
-  }, [searchParams, navigate]);
+  }, [navigate]);
   
   return null;
 }
