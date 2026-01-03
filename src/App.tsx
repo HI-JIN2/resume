@@ -7,14 +7,12 @@ import { SimpleList } from "./components/simple-list";
 import { Presentation } from "./components/presentation";
 import { PersonalProject } from "./components/personal-project";
 import { Profile } from "./components/Profile";
-import { ResumeSwitcher } from "./components/resume-switcher";
 import { WorkExperience } from "./components/work-experience";
 import { ResumeProvider } from "./context/resume-context";
 
 function ResumeContent() {
   return (
     <Layout>
-      <ResumeSwitcher />
       <Profile />
       <AboutMe />
       <WorkExperience />
