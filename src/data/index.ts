@@ -14,6 +14,11 @@ type AboutItem = {
   descriptions: string[];
 };
 
+type SkillCategory = {
+  title: string;
+  items: string[];
+};
+
 type WorkExperience = {
   corp: string;
   about?: string[];
@@ -82,6 +87,7 @@ export type ResumeType = "android" | "general";
 export type ResumeVariant = {
   profile: Profile;
   about: AboutItem[];
+  skills?: SkillCategory[];
   experience: WorkExperience[];
   personalProjects: PersonalProject[];
 };

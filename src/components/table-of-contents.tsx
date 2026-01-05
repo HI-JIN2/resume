@@ -1,25 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useResumeData } from "../context/resume-context";
 
 type Section = {
   id: string;
   title: string;
 };
 
-const SECTIONS: Section[] = [
-  { id: "about", title: "About" },
-  { id: "work-experience", title: "Work Experience" },
-  { id: "side-project", title: "Side Project" },
-  { id: "award", title: "Award" },
-  { id: "community", title: "Community" },
-  { id: "presentation", title: "Presentation" },
-  { id: "interview", title: "Interview" },
-  { id: "education", title: "Education" },
-  { id: "certificates", title: "Certificates" },
-];
-
 export const TableOfContents = () => {
+  const { skills } = useResumeData();
   const [activeId, setActiveId] = useState<string>("");
   const [isScrolling, setIsScrolling] = useState(false);
+  const sections = useMemo<Section[]>(() => {
+    return [
+      { id: "about", title: "About" },
+      ...(skills && skills.length > 0 ? [{ id: "skills", title: "Skills" }] : []),
+      { id: "work-experience", title: "Work Experience" },
+      { id: "side-project", title: "Side Project" },
+      { id: "award", title: "Award" },
+      { id: "community", title: "Community" },
+      { id: "presentation", title: "Presentation" },
+      { id: "interview", title: "Interview" },
+      { id: "education", title: "Education" },
+      { id: "certificates", title: "Certificates" },
+    ];
+  }, [skills]);
 
   useEffect(() => {
     const updateActiveSection = () => {
@@ -33,7 +37,7 @@ export const TableOfContents = () => {
       const documentHeight = document.documentElement.scrollHeight;
       
       // 페이지 맨 아래에 도달했거나 거의 도달한 경우 마지막 섹션 활성화
-      const lastSection = SECTIONS[SECTIONS.length - 1];
+      const lastSection = sections[sections.length - 1];
       const lastElement = document.getElementById(lastSection.id);
       if (lastElement) {
         const lastElementTop = lastElement.offsetTop;
@@ -49,22 +53,22 @@ export const TableOfContents = () => {
 
       // 아래에서 위로 순회하여 현재 스크롤 위치보다 위에 있는 첫 번째 섹션 찾기
       let activeSection = "";
-      for (let i = SECTIONS.length - 1; i >= 0; i--) {
-        const element = document.getElementById(SECTIONS[i].id);
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i].id);
         if (element) {
           const elementTop = element.offsetTop;
           
           // 섹션이 뷰포트 상단 기준선보다 위에 있으면
           if (scrollPosition >= elementTop) {
             // 마지막 섹션인 경우 더 관대하게 처리
-            if (i === SECTIONS.length - 1) {
+            if (i === sections.length - 1) {
               // 마지막 섹션이 화면에 보이기 시작하면 활성화
               if (elementTop <= viewportBottom - 100) {
-                activeSection = SECTIONS[i].id;
+                activeSection = sections[i].id;
                 break;
               }
             } else {
-              activeSection = SECTIONS[i].id;
+              activeSection = sections[i].id;
               break;
             }
           }
@@ -130,7 +134,7 @@ export const TableOfContents = () => {
       }
     );
 
-    SECTIONS.forEach(({ id }) => {
+    sections.forEach(({ id }) => {
       const element = document.getElementById(id);
       if (element) {
         observer.observe(element);
@@ -139,14 +143,14 @@ export const TableOfContents = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      SECTIONS.forEach(({ id }) => {
+      sections.forEach(({ id }) => {
         const element = document.getElementById(id);
         if (element) {
           observer.unobserve(element);
         }
       });
     };
-  }, [isScrolling]);
+  }, [isScrolling, sections]);
 
   const handleClick = (id: string) => {
     const element = document.getElementById(id);
@@ -194,7 +198,7 @@ export const TableOfContents = () => {
     <aside className="hidden xl:block fixed right-8 top-1/2 -translate-y-1/2 w-48">
       <nav className="sticky top-24">
         <ul className="space-y-2">
-          {SECTIONS.map(({ id, title }) => (
+          {sections.map(({ id, title }) => (
             <li key={id}>
               <button
                 onClick={() => handleClick(id)}
@@ -213,4 +217,3 @@ export const TableOfContents = () => {
     </aside>
   );
 };
-
