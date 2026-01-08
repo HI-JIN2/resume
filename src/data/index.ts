@@ -59,14 +59,6 @@ type PersonalProject = {
   features: PersonalProjectFeature[];
 };
 
-type Presentation = {
-  title: string;
-  event: string;
-  from?: string;
-  to?: string;
-  descriptions: string[];
-  link?: string;
-};
 
 type OpenSourceProject = {
   title: string;
@@ -93,7 +85,6 @@ export type ResumeVariant = {
 };
 
 export type ResumeContent = ResumeVariant & {
-  presentations: Presentation[];
   openSourceProjects: OpenSourceProject[];
   simpleLists: SimpleListDataType[];
   lastUpdatedAt: string;
@@ -101,32 +92,6 @@ export type ResumeContent = ResumeVariant & {
 
 const LAST_UPDATED_AT = "2025. 12. 10";
 
-// 공통 데이터
-const COMMON_PRESENTATIONS: Presentation[] = [
-  {
-    title: "ICT 인턴십제도와 스타트업 인턴 후기",
-    event: "GDGoC SSUMALL SEMINAR",
-    descriptions: ["스타트업 인턴십 경험과 ICT 인턴십제도 소개"],
-  },
-  {
-    title: "해외봉사가서 개발한 썰 푼다",
-    event: "GDGoC SSUMALL SEMINAR",
-    descriptions: ["제한된 환경에서 문제를 빠르게 해결한 안드로이드 개발 사례 공유"],
-  },
-  {
-    title: "학교에서 서비스 운영하기",
-    event: "GDSC SSUMALL SEMINAR",
-    descriptions: [
-      "교내 서비스(EAT-SSU) 운영 경험과 데이터 기반 기능 개선 사례 공유",
-    ],
-    link: "https://www.youtube.com/watch?v=Qx719VFI6No",
-  },
-  {
-    title: "JWT로 알아보는 안드로이드-서버가 소통하는 법",
-    event: "UMC 4th Conference",
-    descriptions: ["JWT 기반 인증 시스템과 안드로이드-서버 통신 구조 설명"],
-  },
-];
 
 // name이 있는 레이아웃 (Activities)
 const COMMON_ACTIVITIES: OpenSourceProject[] = [
@@ -207,6 +172,28 @@ const COMMON_SIMPLE_LISTS: SimpleListDataType[] = [
     ],
   },
   {
+    title: "Presentation",
+    features: [
+      {
+        title: "",
+        descriptions: [
+          "GDGoC SSUMALL SEMINAR, ICT 인턴십제도와 스타트업 인턴 후기",
+          "GDGoC SSUMALL SEMINAR, 해외봉사가서 개발한 썰 푼다: 제한된 환경에서 문제를 빠르게 해결한 개발 경험 공유",
+          "GDSC SSUMALL SEMINAR, 학교에서 서비스 운영하기",
+
+          "UMC 4th Conference, JWT로 알아보는 안드로이드-서버가 소통하는 법"
+
+        ],
+        links: [
+          "",
+          "",
+          "https://www.youtube.com/watch?v=Qx719VFI6No",
+          "",
+        ],
+      },
+    ],
+  },
+  {
     title: "Interview",
     features: [
       {
@@ -265,7 +252,6 @@ export const getResumeContent = (resumeType: ResumeType): ResumeContent => {
 
   return {
     ...variant,
-    presentations: COMMON_PRESENTATIONS,
     openSourceProjects: COMMON_ACTIVITIES,
     simpleLists: COMMON_SIMPLE_LISTS,
     lastUpdatedAt: LAST_UPDATED_AT,
