@@ -16,20 +16,15 @@ const formatDate = (dateStr: string) => {
  */
 export const calculateDuration = (from: string, to?: string): string => {
   const startDate = formatDate(from);
-  const endDate = to ? formatDate(to) : dayjs(); // to가 없으면 현재 날짜
+  const endDate = to ? formatDate(to) : dayjs().startOf("month"); // to가 없으면 현재 월
   const isOngoing = !to;
 
-  // from과 to가 같으면 1개월로 처리
-  if (to && from === to) {
-    return "1개월";
-  }
-
   // 개월 차이 계산
-  const months = endDate.diff(startDate, "month", true); // 소수점 포함
-  const roundedMonths = Math.round(months); // 반올림
+  const months = endDate.diff(startDate, "month"); // 월 단위 차이
+  const totalMonths = months + 1; // 시작 월 포함
 
   // 0개월인 경우 1개월로 처리
-  const finalMonths = roundedMonths === 0 ? 1 : roundedMonths;
+  const finalMonths = totalMonths <= 0 ? 1 : totalMonths;
 
   return isOngoing ? `${finalMonths}개월+` : `${finalMonths}개월`;
 };
